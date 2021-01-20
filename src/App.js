@@ -2,6 +2,7 @@
 import React, {Component} from 'react'
 import {Route, Link} from 'react-router-dom'
 import dummyStore from './dummy-store'
+import LandingPage from './Components/LandingPage/LandingPage'
 import './App.css';
 
 
@@ -17,7 +18,13 @@ class App extends Component {
   render () {
     const {recipes} = this.state
     return(
-      <p>Hello world!</p>
+      <div>
+        <Route
+          exact 
+          path='/'
+          component={LandingPage}
+        />
+      </div>
     )
   }
 }
