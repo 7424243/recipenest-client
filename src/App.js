@@ -5,7 +5,7 @@ import dummyStore from './dummy-store'
 import LandingPage from './Components/LandingPage/LandingPage'
 import './App.css';
 import RecipenestContext from './RecipenestContext';
-import MainPage from './Components/MainPage/MainPage';
+import RecipeList from './Components/RecipeList/RecipeList';
 
 
 class App extends Component {
@@ -56,7 +56,7 @@ class App extends Component {
           />
           <Route 
             path='/recipes'
-            component={MainPage}
+            component={RecipeList}
           />
         </div>
       </RecipenestContext.Provider>

@@ -1,8 +1,14 @@
 import React, {Component} from 'react'
+import Header from '../Header/Header'
 
 class RecipeList extends Component {
     render() {
-        return <p>Recipe List goes here...</p>
+        return (
+            <>
+                <Header />
+                <p>Recipe List goes here...</p>
+            </>
+        )
     }
 }
 
