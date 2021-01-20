@@ -1,10 +1,11 @@
 
 import React, {Component} from 'react'
-import {Route, Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import dummyStore from './dummy-store'
 import LandingPage from './Components/LandingPage/LandingPage'
 import './App.css';
 import RecipenestContext from './RecipenestContext';
+import MainPage from './Components/MainPage/MainPage';
 
 
 class App extends Component {
@@ -52,6 +53,10 @@ class App extends Component {
             exact 
             path='/'
             component={LandingPage}
+          />
+          <Route 
+            path='/recipes'
+            component={MainPage}
           />
         </div>
       </RecipenestContext.Provider>
