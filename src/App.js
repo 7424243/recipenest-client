@@ -7,11 +7,18 @@ import './App.css';
 import RecipenestContext from './RecipenestContext';
 import RecipeList from './Components/RecipeList/RecipeList';
 import Header from './Components/Header/Header';
+import RecipePage from './Components/RecipePage/RecipePage';
+import AddRecipe from './Components/AddRecipe/AddRecipe';
+import SignUpPage from './Components/SignUpPage/SignUpPage';
 
 
 class App extends Component {
-  state = {
-    recipes: []
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      recipes: []
+    }
   }
 
   componentDidMount() {
@@ -60,6 +67,18 @@ class App extends Component {
             <Route 
               path='/recipes'
               component={RecipeList}
+            />
+            <Route 
+              path='/recipes/:id'
+              component={RecipePage}
+            />
+            <Route 
+              path='/addRecipe'
+              component={AddRecipe}
+            />
+            <Route 
+              path='/signup'
+              component={SignUpPage}
             />
           </div>
         </RecipenestContext.Provider>
