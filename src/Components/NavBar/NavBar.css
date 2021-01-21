@@ -1,4 +1,12 @@
 nav {
-    margin-right: 50px;
-    margin-top: 40px;
+    margin-left: 50px;
+}
+
+
+@media screen and (min-width: 711px) {
+
+    nav {
+        margin-right: 50px;
+        margin-top: 40px;
+    }
 }
