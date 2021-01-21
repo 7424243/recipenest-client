@@ -16,7 +16,7 @@ class LoginPage extends Component {
                         <input type="text" placeholder="password" />
                     </section>
                     <section className="buttons">
-                        <Link to="../home-page/home-page.html"><button>Cancel</button></Link>
+                        <Link to="/recipes"><button>Cancel</button></Link>
                         <button>Submit</button>
                     </section>
                 </form>

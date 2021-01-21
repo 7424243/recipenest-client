@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import dummyStore from './dummy-store'
 import LandingPage from './Components/LandingPage/LandingPage'
 import './App.css';
@@ -56,38 +56,41 @@ class App extends Component {
       addRecipe: this.handleAddRecipe,
     }
     return(
-      <>
+      <div className='app-container'>
         <Header />
         <RecipenestContext.Provider value={contextValue}>
           <div>
-            <Route
-              exact 
-              path='/'
-              component={LandingPage}
-            />
-            <Route 
-              path='/recipes'
-              component={RecipeList}
-            />
-            <Route 
-              path='/recipes/:id'
-              component={RecipePage}
-            />
-            <Route 
-              path='/addRecipe'
-              component={AddRecipe}
-            />
-            <Route 
-              path='/signup'
-              component={SignUpPage}
-            />
-            <Route 
-              path='/login'
-              component={LoginPage}
-            />
+            <Switch>
+              <Route
+                exact 
+                path={'/'}
+                component={LandingPage}
+              />
+              <Route 
+                path={'/recipes'}
+                component={RecipeList}
+              />
+              <Route 
+                path={'/recipe/:id'}
+                component={RecipePage}
+              />
+              <Route 
+                path={'/addRecipe'}
+                component={AddRecipe}
+              />
+              <Route 
+                path={'/signup'}
+                component={SignUpPage}
+              />
+              <Route 
+                path={'/login'}
+                component={LoginPage}
+              />
+            </Switch>
           </div>
         </RecipenestContext.Provider>
-      </>
+        <footer></footer>
+      </div>
     )
   }
 }

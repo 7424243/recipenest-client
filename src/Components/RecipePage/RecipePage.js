@@ -9,10 +9,10 @@ class RecipePage extends Component {
         console.log(this.context)
         const recipeId = this.props.match.params.id
         const {recipes} = this.context
-        const getRecipe = (recipes, recipeId) => {
+        const getRecipe = (recipes, recipeId) =>
             recipes.find(recipe => recipe.id === recipeId)
-        }
         const recipeForPage = getRecipe(recipes, recipeId)
+        console.log(recipeForPage)
 
         return (
             <>
@@ -28,9 +28,10 @@ class RecipePage extends Component {
                     <Link><button>Delete</button></Link>
                     <Link><button>Back</button></Link>
                 </div>
-            </>
+            </> 
         )
     }
 }
 
 export default RecipePage
+

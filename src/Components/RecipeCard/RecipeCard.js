@@ -10,7 +10,7 @@ class RecipeCard extends Component {
         return (
             <div>
                 <img src={word_cloud_url} alt="word cloud that describes the recipe" />
-                <Link to={`../recipes/${id}`}><h4>{name}</h4></Link>
+                <Link to={`/recipe/${id}`}><h4>{name}</h4></Link>
             </div>
         )
     }

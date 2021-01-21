@@ -20,12 +20,12 @@ class AddRecipe extends Component {
                         <input type="url" placeholder="https://www.recipe.com" />
                     </section>
                     <section className="like">
-                        <label htmlFor="like">Why Did You Like It?: </label>
-                        <textarea name="like" id="" cols="30" rows="10" placeholder="What did you like about this recipe?"></textarea>
+                        <label htmlFor="like">Description: </label>
+                        <textarea name="like" id="" cols="30" rows="10" placeholder="The word cloud will be make out of this input"></textarea>
                     </section>
                     <section className="notes">
                         <label htmlFor="notes">Additional Notes: </label>
-                        <textarea name="notes" id="" cols="30" rows="10" placeholder="Modifications for next time?"></textarea>
+                        <textarea name="notes" id="" cols="30" rows="10" placeholder="Modifications for next time? Likes? Dislikes?"></textarea>
                     </section>
                     <section className="buttons">
                         <Link to="/recipes"><button>Cancel</button></Link>
