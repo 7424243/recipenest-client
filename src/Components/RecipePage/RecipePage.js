@@ -7,7 +7,7 @@ class RecipePage extends Component {
 
     render() {
         console.log(this.context)
-        const recipeId = this.props.match.params.id
+        const recipeId = parseInt(this.props.match.params.id)
         const {recipes} = this.context
         const getRecipe = (recipes, recipeId) =>
             recipes.find(recipe => recipe.id === recipeId)
@@ -19,7 +19,7 @@ class RecipePage extends Component {
                 <div>
                     <img src={recipeForPage.word_cloud_url} alt="word cloud from recipe description"/>
                     <h3>{recipeForPage.recipe_name}</h3>
-                    <Link to={recipeForPage.url}><h5>Link</h5></Link>
+                    <a href={recipeForPage.url} target='_blank'><h5>Link</h5></a>
                     <p>Description: {recipeForPage.description}</p>
                     <p>Additional Notes: {recipeForPage.notes}</p>
                 </div>
