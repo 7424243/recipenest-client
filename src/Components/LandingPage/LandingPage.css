@@ -1,19 +1,27 @@
-button {
+.landing-page-button {
+    margin-top: 20px;
     padding: 1%;
-    text-align: center;
 }
 
-
+.landing-page-button-container {
+    text-align: center;
+}
 
 .landing-page-container {
     line-height: 2.0;
     margin: 50px;
 }
 
-.landing-page-li {
-    list-style-type: none;
-    text-align: center;
+.landing-page-list {
+    text-align: left;
 }
+
+.landing-page-li {
+    text-align: center;
+    list-style-position: inside;
+}
+
+
 
 @media screen and (min-width: 540px) {
     .landing-page-container {
