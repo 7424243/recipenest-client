@@ -10,6 +10,7 @@ import Header from './Components/Header/Header';
 import RecipePage from './Components/RecipePage/RecipePage';
 import AddRecipe from './Components/AddRecipe/AddRecipe';
 import SignUpPage from './Components/SignUpPage/SignUpPage';
+import LoginPage from './Components/LoginPage/LoginPage';
 
 
 class App extends Component {
@@ -79,6 +80,10 @@ class App extends Component {
             <Route 
               path='/signup'
               component={SignUpPage}
+            />
+            <Route 
+              path='/login'
+              component={LoginPage}
             />
           </div>
         </RecipenestContext.Provider>
