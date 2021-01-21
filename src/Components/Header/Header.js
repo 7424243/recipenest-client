@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 
 
 function Header() {
         return (
             <>
-                <h1>Recipenest</h1>
+                <Link to='/recipes'><h1>RecipeNest</h1></Link>
                 <NavBar />
             </>
         )

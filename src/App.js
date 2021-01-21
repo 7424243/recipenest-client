@@ -6,6 +6,7 @@ import LandingPage from './Components/LandingPage/LandingPage'
 import './App.css';
 import RecipenestContext from './RecipenestContext';
 import RecipeList from './Components/RecipeList/RecipeList';
+import Header from './Components/Header/Header';
 
 
 class App extends Component {
@@ -47,20 +48,22 @@ class App extends Component {
       addRecipe: this.handleAddRecipe,
     }
     return(
-      <RecipenestContext.Provider value={contextValue}>
-        <div>
-          <Route
-            exact 
-            path='/'
-            component={LandingPage}
-          />
-          <Route 
-            path='/recipes'
-            component={RecipeList}
-          />
-        </div>
-      </RecipenestContext.Provider>
-
+      <>
+        <Header />
+        <RecipenestContext.Provider value={contextValue}>
+          <div>
+            <Route
+              exact 
+              path='/'
+              component={LandingPage}
+            />
+            <Route 
+              path='/recipes'
+              component={RecipeList}
+            />
+          </div>
+        </RecipenestContext.Provider>
+      </>
     )
   }
 }
