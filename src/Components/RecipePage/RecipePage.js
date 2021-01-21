@@ -7,13 +7,12 @@ class RecipePage extends Component {
     static contextType = RecipenestContext
 
     render() {
-        console.log(this.context)
         const recipeId = parseInt(this.props.match.params.id)
         const {recipes} = this.context
         const getRecipe = (recipes, recipeId) =>
             recipes.find(recipe => recipe.id === recipeId)
         const recipeForPage = getRecipe(recipes, recipeId)
-        console.log(recipeForPage)
+        
 
         return (
             <div className='recipe-page-container'>
