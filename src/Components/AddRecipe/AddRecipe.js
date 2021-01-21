@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
+import './AddRecipe.css'
 
 class AddRecipe extends Component {
 
@@ -10,7 +11,7 @@ class AddRecipe extends Component {
         return (
             <>
                 <h3>New Recipe</h3>
-                <form>
+                <form className='add-recipe-form'>
                     <section className="name">
                         <label htmlFor="name">Recipe Name: </label>
                         <input type="text" placeholder="Recipe Name"/>
