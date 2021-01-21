@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
+import './RecipePage.css'
 
 class RecipePage extends Component {
     static contextType = RecipenestContext
@@ -15,20 +16,20 @@ class RecipePage extends Component {
         console.log(recipeForPage)
 
         return (
-            <>
+            <div className='recipe-page-container'>
                 <div>
-                    <img src={recipeForPage.word_cloud_url} alt="word cloud from recipe description"/>
+                    <img src={recipeForPage.word_cloud_url} alt='word cloud from recipe description'/>
                     <h3>{recipeForPage.recipe_name}</h3>
                     <a href={recipeForPage.url} target='_blank'><h5>Link</h5></a>
                     <p>Description: {recipeForPage.description}</p>
                     <p>Additional Notes: {recipeForPage.notes}</p>
                 </div>
-                <div>
+                <div className='buttons'>
                     <Link><button>Edit</button></Link>
                     <Link><button>Delete</button></Link>
                     <Link><button>Back</button></Link>
                 </div>
-            </> 
+            </div> 
         )
     }
 }

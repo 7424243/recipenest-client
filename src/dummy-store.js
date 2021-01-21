@@ -47,7 +47,7 @@ export default {
             "description": "Simple and easy way to cook pork tenderloin.",
             "notes": "Instant Pot",
             "word_cloud_url": "https://quickchart.io/wordcloud?text=Simple%20and%20easy%20way%20to%20cook%20pork%20tenderloin",
-            "date_created": "2018-07-12T23:00:00.000Z",
+            "date_created": "",
             "user_id": 1,
         },
     ]

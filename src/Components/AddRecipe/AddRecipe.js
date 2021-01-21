@@ -9,7 +9,7 @@ class AddRecipe extends Component {
 
     render() {
         return (
-            <>
+            <div className='add-recipe-container'>
                 <h3>New Recipe</h3>
                 <form className='add-recipe-form'>
                     <section className='name'>
@@ -33,7 +33,7 @@ class AddRecipe extends Component {
                         <button>Save</button>
                     </section>
                 </form>
-            </>
+            </div>
         )
     }
 }
