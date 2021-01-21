@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import RecipenestContext from '../../RecipenestContext'
 import RecipeCard from '../RecipeCard/RecipeCard'
+import './RecipeList.css'
 
 class RecipeList extends Component {
     static contextType = RecipenestContext
@@ -16,9 +17,9 @@ class RecipeList extends Component {
             </li>
         )
         return (
-            <>
+            <div className='recipe-list-container'>
                 <ul>{recipeList}</ul>
-            </>
+            </div>
         )
     }
 }
