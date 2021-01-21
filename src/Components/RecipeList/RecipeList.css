@@ -1,0 +1,10 @@
+ul {
+    list-style-type: none;
+}
+
+.recipe-list-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
