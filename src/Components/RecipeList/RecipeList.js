@@ -18,7 +18,7 @@ class RecipeList extends Component {
         )
         return (
             <div className='recipe-list-container'>
-                <ul>{recipeList}</ul>
+                <ul className='recipe-list'>{recipeList}</ul>
             </div>
         )
     }

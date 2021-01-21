@@ -10,7 +10,7 @@ class RecipeCard extends Component {
         const {id, name, word_cloud_url} = this.props
         return (
             <div className='recipe-card'>
-                <img src={word_cloud_url} alt='word cloud that describes the recipe' />
+                <img className='recipe-card-img' src={word_cloud_url} alt='word cloud that describes the recipe' />
                 <Link to={`/recipe/${id}`}><h4>{name}</h4></Link>
             </div>
         )
