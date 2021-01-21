@@ -18,7 +18,14 @@ label {
 
 .sign-up-form {
     margin: 0 auto;
-    padding: 0 0 40px;
-    max-width: 450px;
+    padding: 15px 40px;
+    max-width: 80%;
     text-align: left;
+}
+
+@media screen and (min-width: 540px) {
+    .sign-up-form {
+        padding: 0 0 40px;
+        max-width: 450px;
+    }
 }

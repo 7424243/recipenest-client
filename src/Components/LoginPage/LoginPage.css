@@ -21,6 +21,13 @@ label {
 .login-form {
     margin: 0 auto;
     padding: 0 0 40px;
-    max-width: 450px;
+    max-width: 80%;
     text-align: left;
+}
+
+@media screen and (min-width: 540px) {
+    .login-form {
+        padding: 0 0 40px;
+        max-width: 450px;
+    }
 }

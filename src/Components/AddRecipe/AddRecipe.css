@@ -22,11 +22,18 @@ label {
 .add-recipe-form {
     margin: 0 auto;
     padding: 0 0 40px;
-    max-width: 450px;
+    max-width: 80%;
     text-align: left;
 }
 
 .buttons {
     margin-top: 40px;
     text-align: center;
+}
+
+@media screen and (min-width: 540px) {
+    .add-recipe-form {
+        padding: 0 0 40px;
+        max-width: 450px;
+    }
 }
