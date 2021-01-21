@@ -1,0 +1,14 @@
+* {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
