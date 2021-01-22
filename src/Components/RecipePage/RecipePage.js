@@ -19,7 +19,7 @@ class RecipePage extends Component {
                 <div>
                     <img className='recipe-page-img'src={recipeForPage.img_url} alt='word cloud from recipe description'/>
                     <h3>{recipeForPage.recipe_name}</h3>
-                    <a href={recipeForPage.url} target='_blank'><h5>Clickable Recipe Link</h5></a>
+                    <a href={recipeForPage.url} target='_blank' rel='noreferrer'><h5>Clickable Recipe Link</h5></a>
                     <p>Description: {recipeForPage.description}</p>
                     <p>Additional Notes: {recipeForPage.notes}</p>
                 </div>
