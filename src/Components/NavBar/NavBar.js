@@ -7,8 +7,7 @@ function NavBar() {
         <nav>
             <Link to='/recipes'>All Recipes |</Link>
             <Link to='/addRecipe'> Add Recipe |</Link>
-            <Link to='/login'> Login |</Link>
-            <Link to='/signup'> Sign Up</Link>
+            <Link to='/login'> Login </Link>
         </nav>
     )
 }

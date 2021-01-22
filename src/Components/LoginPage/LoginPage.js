@@ -18,6 +18,7 @@ class LoginPage extends Component {
                     </section>
                     <section className='buttons'>
                         <Link to='/recipes'><button>Cancel</button></Link>
+                        <Link to='/signup'><button>Sign Up</button></Link>
                         <button>Submit</button>
                     </section>
                 </form>
