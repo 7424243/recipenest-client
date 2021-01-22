@@ -6,7 +6,7 @@ function NavBar() {
     return (
         <nav>
             <Link to='/recipes'>All Recipes |</Link>
-            <Link to='/addRecipe'> Add Recipe |</Link>
+            <Link to='/recipes'> My Recipes |</Link>
             <Link to='/login'> Login </Link>
         </nav>
     )

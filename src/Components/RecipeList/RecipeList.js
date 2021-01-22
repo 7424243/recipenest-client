@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import './RecipeList.css'
@@ -17,9 +18,14 @@ class RecipeList extends Component {
             </li>
         )
         return (
-            <div className='recipe-list-container'>
+            <div>
                 <ul className='recipe-list'>{recipeList}</ul>
+                <div className='container'>
+                <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
+                </div>
+                
             </div>
+
         )
     }
 }
