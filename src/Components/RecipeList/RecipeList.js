@@ -21,9 +21,11 @@ class RecipeList extends Component {
             <div>
                 <ul className='recipe-list'>{recipeList}</ul>
                 <div className='container'>
-                <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
+                    <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
                 </div>
-                
+                <div className='pagination'>
+                    <p>Page 1 ... <button>{'>>'}</button></p>
+                </div>
             </div>
 
         )
