@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component renders the UI as expected 1`] = `
+<div
+  className="app-container"
+>
+  <div
+    className="header-container"
+  >
+    <a
+      href="/recipes"
+      onClick={[Function]}
+    >
+      <h1>
+        RecipeNest
+      </h1>
+    </a>
+    <nav>
+      <a
+        href="/recipes"
+        onClick={[Function]}
+      >
+        All Recipes |
+      </a>
+      <a
+        href="/recipes"
+        onClick={[Function]}
+      >
+         My Recipes |
+      </a>
+      <a
+        href="/login"
+        onClick={[Function]}
+      >
+         Login 
+      </a>
+    </nav>
+  </div>
+  <div>
+    <div
+      className="landing-page-container"
+    >
+      <p>
+        RecipeNest is a platform created to help keep track of virtual recipes.
+      </p>
+      <p>
+        It allows you to...
+      </p>
+      <ul
+        className="landing-page-list"
+      >
+        <li
+          className="landing-page-li"
+        >
+          Save links and notes for recipes.
+        </li>
+        <li
+          className="landing-page-li"
+        >
+          Get all previously saved recipes.
+        </li>
+      </ul>
+      <p>
+        Initially, you are shown a list of previously saved recipe names.
+      </p>
+      <p>
+        To view a saved recipe, click on the recipe name. 
+      </p>
+      <p>
+        To add a new recipe, click on 'Add Recipe' and you will be prompted to provide some details such as the name of the recipe, the link, and any additional notes you want.
+      </p>
+      <div
+        className="landing-page-button-container"
+      >
+        <a
+          href="/recipes"
+          onClick={[Function]}
+        >
+          <button
+            className="landing-page-button"
+          >
+            Get Started!
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer />
+</div>
+`;

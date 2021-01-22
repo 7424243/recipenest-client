@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component renders the UI as expected 1`] = `
+<div
+  className="header-container"
+>
+  <a
+    href="/recipes"
+    onClick={[Function]}
+  >
+    <h1>
+      RecipeNest
+    </h1>
+  </a>
+  <nav>
+    <a
+      href="/recipes"
+      onClick={[Function]}
+    >
+      All Recipes |
+    </a>
+    <a
+      href="/recipes"
+      onClick={[Function]}
+    >
+       My Recipes |
+    </a>
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+       Login 
+    </a>
+  </nav>
+</div>
+`;

@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
+import renderer from 'react-test-renderer'
 import RecipePage from './RecipePage'
 
-it('renders without crashing', () => {
-    const div = document.createElement('div')
+describe('RecipePage Component', () => {
     const props = {
         match: {
             params: {
@@ -11,6 +11,16 @@ it('renders without crashing', () => {
             }
         }
     }
-    ReactDOM.render(<BrowserRouter><RecipePage {...props}/></BrowserRouter>, div)
-    ReactDOM.unmountComponentAtNode(div)
+    it('renders without crashing', () => {
+        const div = document.createElement('div')
+        ReactDOM.render(<BrowserRouter><RecipePage {...props}/></BrowserRouter>, div)
+        ReactDOM.unmountComponentAtNode(div)
+    })
+
+    it('renders the UI as expected', () => {
+        const tree = renderer 
+          .create(<BrowserRouter><RecipePage {...props}/></BrowserRouter>)
+          .toJSON()
+        expect(tree).toMatchSnapshot()
+      })
 })

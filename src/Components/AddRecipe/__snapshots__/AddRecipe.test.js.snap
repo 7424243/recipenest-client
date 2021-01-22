@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRecipe Component renders the UI as expected 1`] = `
+<div
+  className="add-recipe-container"
+>
+  <h3>
+    New Recipe
+  </h3>
+  <form
+    className="add-recipe-form"
+  >
+    <section
+      className="name"
+    >
+      <label
+        htmlFor="name"
+      >
+        Recipe Name: 
+      </label>
+      <input
+        placeholder="Recipe Name"
+        type="text"
+      />
+    </section>
+    <section
+      className="url"
+    >
+      <label
+        htmlFor="url"
+      >
+        Recipe URL: 
+      </label>
+      <input
+        placeholder="https://www.recipe.com"
+        type="url"
+      />
+    </section>
+    <section
+      className="like"
+    >
+      <label
+        htmlFor="like"
+      >
+        Description: 
+      </label>
+      <textarea
+        cols="30"
+        name="like"
+        placeholder="A brief description and/or keywords to describe the recipe"
+        rows="10"
+      />
+    </section>
+    <section
+      className="notes"
+    >
+      <label
+        htmlFor="notes"
+      >
+        Notes: 
+      </label>
+      <textarea
+        cols="30"
+        name="notes"
+        placeholder="Modifications for next time? Likes? Dislikes?"
+        rows="10"
+      />
+    </section>
+    <section
+      className="buttons"
+    >
+      <a
+        href="/recipes"
+        onClick={[Function]}
+      >
+        <button>
+          Cancel
+        </button>
+      </a>
+      <button>
+        Save
+      </button>
+    </section>
+  </form>
+</div>
+`;

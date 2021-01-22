@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage Component renders the UI as expected 1`] = `
+Array [
+  <h3>
+    Login!
+  </h3>,
+  <form
+    className="login-form"
+  >
+    <section
+      className="username"
+    >
+      <label
+        htmlFor="username"
+      >
+        Username: 
+      </label>
+      <input
+        placeholder="username"
+        type="text"
+      />
+    </section>
+    <section
+      className="password"
+    >
+      <label
+        htmlFor="password"
+      >
+        Password: 
+      </label>
+      <input
+        placeholder="password"
+        type="text"
+      />
+    </section>
+    <section
+      className="buttons"
+    >
+      <a
+        href="/recipes"
+        onClick={[Function]}
+      >
+        <button>
+          Cancel
+        </button>
+      </a>
+      <a
+        href="/signup"
+        onClick={[Function]}
+      >
+        <button>
+          Sign Up
+        </button>
+      </a>
+      <button>
+        Submit
+      </button>
+    </section>
+  </form>,
+]
+`;

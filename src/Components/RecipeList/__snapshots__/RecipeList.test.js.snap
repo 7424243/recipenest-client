@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeList Component renders the UI as expected 1`] = `
+<div>
+  <ul
+    className="recipe-list"
+  />
+  <div
+    className="container"
+  >
+    <a
+      href="/addRecipe"
+      onClick={[Function]}
+    >
+      <button
+        className="add-button"
+      >
+        +
+      </button>
+    </a>
+  </div>
+  <div
+    className="pagination"
+  >
+    <p>
+      Page 1 ... 
+      <button>
+        &gt;&gt;
+      </button>
+    </p>
+  </div>
+</div>
+`;

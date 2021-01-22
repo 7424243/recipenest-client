@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpPage Component renders the UI as expected 1`] = `
+<div
+  className="sign-up-container"
+>
+  <h3>
+    Sign Up!
+  </h3>
+  <form
+    className="sign-up-form"
+  >
+    <section
+      className="fullname"
+    >
+      <label
+        htmlFor="fullname"
+      >
+        Full Name: 
+      </label>
+      <input
+        placeholder="Full Name"
+        type="text"
+      />
+    </section>
+    <section
+      className="url"
+    >
+      <label
+        htmlFor="username"
+      >
+        Username: 
+      </label>
+      <input
+        placeholder="username"
+        type="text"
+      />
+    </section>
+    <section
+      className="password"
+    >
+      <label
+        htmlFor="password"
+      >
+        Password: 
+      </label>
+      <input
+        placeholder="password"
+        type="text"
+      />
+    </section>
+    <section
+      className="nickname"
+    >
+      <label
+        htmlFor="nickname"
+      >
+        Nickname (option): 
+      </label>
+      <input
+        placeholder="optional nickname"
+        type="text"
+      />
+    </section>
+    <section
+      className="buttons"
+    >
+      <a
+        href="/recipes"
+        onClick={[Function]}
+      >
+        <button>
+          Cancel
+        </button>
+      </a>
+      <button>
+        Submit
+      </button>
+    </section>
+  </form>
+</div>
+`;
