@@ -9,10 +9,12 @@ class RecipeCard extends Component {
     render() {
         const {id, name, img_url} = this.props
         return (
-            <div className='recipe-card'>
-                <img className='recipe-card-img' src={img_url} alt='word cloud that describes the recipe' />
-                <Link to={`/recipe/${id}`}><h4>{name}</h4></Link>
-            </div>
+            <Link to={`/recipe/${id}`}>
+                <div className='recipe-card'>
+                    <img className='recipe-card-img' src={img_url} alt='word cloud that describes the recipe' />
+                    <h4>{name}</h4>
+                </div>
+            </Link>
         )
     }
 
