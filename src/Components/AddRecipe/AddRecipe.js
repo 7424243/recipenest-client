@@ -22,7 +22,7 @@ class AddRecipe extends Component {
                     </section>
                     <section className='like'>
                         <label htmlFor='like'>Description: </label>
-                        <textarea name='like' cols='30' rows='10' placeholder='The word cloud will be make out of this input'></textarea>
+                        <textarea name='like' cols='30' rows='10' placeholder='A brief description and/or keywords to describe the recipe'></textarea>
                     </section>
                     <section className='notes'>
                         <label htmlFor='notes'>Notes: </label>

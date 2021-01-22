@@ -12,7 +12,7 @@ class RecipeList extends Component {
                 <RecipeCard 
                     id={recipe.id}
                     name={recipe.recipe_name}
-                    word_cloud_url={recipe.word_cloud_url}
+                    img_url={recipe.img_url}
                 />
             </li>
         )
