@@ -17,15 +17,15 @@ class RecipePage extends Component {
         return (
             <div className='recipe-page-container'>
                 <div>
-                    <img className='recipe-page-img'src={recipeForPage.img_url} alt='word cloud from recipe description'/>
-                    <h3>{recipeForPage.recipe_name}</h3>
-                    <a href={recipeForPage.url} target='_blank' rel='noreferrer'><h5>Clickable Recipe Link</h5></a>
-                    <p>Description: {recipeForPage.description}</p>
-                    <p>Additional Notes: {recipeForPage.notes}</p>
+                    <img className='recipe-page-img'src={recipeForPage ? recipeForPage.img_url : null} alt='word cloud from recipe description'/>
+                    <h3>{recipeForPage ? recipeForPage.recipe_name : null}</h3>
+                    <a href={recipeForPage ? recipeForPage.url : null} target='_blank' rel='noreferrer'><h5>Clickable Recipe Link</h5></a>
+                    <p>Description: {recipeForPage ? recipeForPage.description : null}</p>
+                    <p>Additional Notes: {recipeForPage ? recipeForPage.notes : null}</p>
                 </div>
                 <div className='buttons'>
-                    <Link><button>Edit</button></Link>
-                    <Link><button>Delete</button></Link>
+                    <button>Edit</button>
+                    <button>Delete</button>
                     <Link to='/recipes'><button>Back</button></Link>
                 </div>
             </div> 
