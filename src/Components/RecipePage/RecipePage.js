@@ -4,15 +4,17 @@ import RecipenestContext from '../../RecipenestContext'
 import './RecipePage.css'
 
 class RecipePage extends Component {
+
+    //allow access to context
     static contextType = RecipenestContext
 
     render() {
+        
         const recipeId = parseInt(this.props.match.params.id)
         const {recipes} = this.context
         const getRecipe = (recipes, recipeId) =>
             recipes.find(recipe => recipe.id === recipeId)
         const recipeForPage = getRecipe(recipes, recipeId)
-        
 
         return (
             <div className='recipe-page-container'>

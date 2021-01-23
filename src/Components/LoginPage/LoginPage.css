@@ -12,6 +12,7 @@ label {
 }
 
 
+/* Classes */
 
 .buttons {
     margin-top: 40px;
@@ -24,6 +25,9 @@ label {
     max-width: 80%;
     text-align: left;
 }
+
+
+/* @media */
 
 @media screen and (min-width: 540px) {
     .login-form {

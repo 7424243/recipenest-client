@@ -11,6 +11,9 @@ label {
     margin-bottom: 5px;
 }
 
+
+/* Classes */
+
 .buttons {
     margin-top: 40px;
     text-align: center;
@@ -22,6 +25,9 @@ label {
     max-width: 80%;
     text-align: left;
 }
+
+
+/* @media */
 
 @media screen and (min-width: 540px) {
     .sign-up-form {

@@ -5,12 +5,12 @@ import './Header.css'
 
 
 function Header() {
-        return (
-            <div className='header-container'>
-                <Link to='/recipes'><h1>RecipeNest</h1></Link>
-                <NavBar />
-            </div>
-        )
+    return (
+        <div className='header-container'>
+            <Link to='/recipes'><h1>RecipeNest</h1></Link>
+            <NavBar />
+        </div>
+    )
 }
 
 export default Header

@@ -5,7 +5,10 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import './RecipeList.css'
 
 class RecipeList extends Component {
+
+    //allow access to context
     static contextType = RecipenestContext
+    
     render() {
         const {recipes} = this.context
         const recipeList = recipes.map(recipe => 

@@ -5,6 +5,7 @@ import './AddRecipe.css'
 
 class AddRecipe extends Component {
 
+    //allow access to context
     static contextType = RecipenestContext
 
     render() {

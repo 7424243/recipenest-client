@@ -4,6 +4,8 @@ import RecipenestContext from '../../RecipenestContext'
 import './RecipeCard.css'
 
 class RecipeCard extends Component {
+
+    //allow access to context
     static contextType = RecipenestContext
 
     render() {

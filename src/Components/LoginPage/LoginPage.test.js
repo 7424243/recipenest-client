@@ -6,16 +6,20 @@ import LoginPage from './LoginPage';
 
 
 describe('LoginPage Component', () => {
+  
+  //smoke test
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(<BrowserRouter><LoginPage/></BrowserRouter>, div)
     ReactDOM.unmountComponentAtNode(div)
   })
   
+  //snapshot test
   it('renders the UI as expected', () => {
     const tree = renderer 
       .create(<BrowserRouter><LoginPage/></BrowserRouter>)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
+  
 })

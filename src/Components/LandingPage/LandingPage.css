@@ -1,3 +1,5 @@
+/* Classes */
+
 .landing-page-button {
     margin-top: 20px;
     padding: 1%;
@@ -22,6 +24,7 @@
 }
 
 
+/* @media */
 
 @media screen and (min-width: 540px) {
     .landing-page-container {

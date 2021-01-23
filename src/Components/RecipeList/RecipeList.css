@@ -1,13 +1,4 @@
-.recipe-list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    list-style-type: none;
-}
-
-
+/* Classes */
 
 .add-button {
     background-color: lightgreen;
@@ -29,3 +20,16 @@
     margin-top: 200px;
     justify-content: center;
 }
+
+.recipe-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+
+
+

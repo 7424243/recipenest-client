@@ -1,15 +1,11 @@
-.recipe-page-img {
-    margin-top: 20px;
-    width: 30%;
-    height: 30%;
-    background-color: lightgray;
-}
-
 p {
     text-align: left;
     margin-left: 20%;
     margin-right: 20%;
 }
+
+
+/* Classes */
 
 .buttons {
     margin-top: 50px;
@@ -19,4 +15,11 @@ p {
     text-align: center;
     padding-top: 5%;
     padding-bottom: 5%;
+}
+
+.recipe-page-img {
+    margin-top: 20px;
+    width: 30%;
+    height: 30%;
+    background-color: lightgray;
 }

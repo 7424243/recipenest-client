@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import dummyStore from './dummy-store'
@@ -15,6 +14,7 @@ import LoginPage from './Components/LoginPage/LoginPage';
 
 class App extends Component {
 
+  //set initial component state
   constructor(props) {
     super(props)
     this.state = {
@@ -22,6 +22,7 @@ class App extends Component {
     }
   }
 
+  //get all recipes when component mounts
   componentDidMount() {
     this.setState(dummyStore)
   }
@@ -50,11 +51,13 @@ class App extends Component {
 
 
   render () {
+
     const contextValue = {
       recipes: this.state.recipes,
       deleteRecipe: this.handleDeleteRecipe,
       addRecipe: this.handleAddRecipe,
     }
+
     return(
       <div className='app-container'>
         <Header />
