@@ -7,11 +7,14 @@
 
 .landing-page-button-container {
     text-align: center;
+    font-family: 'Baskervville', serif;
 }
 
 .landing-page-container {
     line-height: 2.0;
     margin: 50px;
+    font-family: 'Baskervville', serif;
+    font-size: large;
 }
 
 .landing-page-list {

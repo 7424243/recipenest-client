@@ -1,3 +1,9 @@
+h3 {
+    padding-top: 20px;
+    text-align: center;
+    font-family: 'Baskervville', serif;
+}
+
 input {
     margin-bottom: 10px;
 }
@@ -5,6 +11,8 @@ input {
 input, label {
     display: block;
     width: 100%;
+    font-family: 'Baskervville', serif;
+    font-size: large;
 }
 
 label {

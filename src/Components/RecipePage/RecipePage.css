@@ -1,3 +1,9 @@
+h3 {
+    padding-top: 20px;
+    text-align: center;
+    font-family: 'Baskervville', serif;
+}
+
 p {
     text-align: left;
     margin-left: 20%;
@@ -9,12 +15,15 @@ p {
 
 .buttons {
     margin-top: 50px;
+    font-family: 'Baskervville', serif;
 }
 
 .recipe-page-container {
     text-align: center;
     padding-top: 5%;
     padding-bottom: 5%;
+    font-family: 'Baskervville', serif;
+    font-size: larger;
 }
 
 .recipe-page-img {

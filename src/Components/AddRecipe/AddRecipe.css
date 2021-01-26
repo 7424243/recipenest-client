@@ -7,9 +7,16 @@ input {
     margin-bottom: 10px;
 }
 
+h3 {
+    font-family: 'Baskervville', serif;
+    font-size: 25px;
+}
+
 input, label, textarea {
     display: block;
     width: 100%;
+    font-family: 'Baskervville', serif;
+    font-size: large;
 }
 
 label {
@@ -30,6 +37,7 @@ label {
 .buttons {
     margin-top: 40px;
     text-align: center;
+    font-family: 'Baskervville', serif;
 }
 
 

@@ -19,6 +19,8 @@
     flex-direction: row;
     margin-top: 200px;
     justify-content: center;
+    font-family: 'Baskervville', serif;
+    font-size: large;
 }
 
 .recipe-list {
