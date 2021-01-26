@@ -11,7 +11,6 @@ import SignUpPage from './Components/SignUpPage/SignUpPage';
 import LoginPage from './Components/LoginPage/LoginPage';
 import EditRecipeForm from './Components/EditRecipeForm/EditRecipeForm';
 
-
 class App extends Component {
 
   //set initial component state
@@ -21,7 +20,9 @@ class App extends Component {
 
   //get all recipes when component mounts
   componentDidMount() {
-    fetch(`http://localhost:8000/api/recipes/`)
+    fetch(`http://localhost:8000/api/recipes/`, {
+      method: 'GET'
+    })
       .then(res => {
         if(!res.ok) {
           return res.json().then(error => Promise.reject(error))
