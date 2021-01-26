@@ -5,7 +5,7 @@ const RecipenestContext = React.createContext({
     recipes: [],
     deleteRecipe: () => {},
     addRecipe: () => {},
-    editRecipe: () => {},
+    updateRecipe: () => {},
 })
 
 export default RecipenestContext

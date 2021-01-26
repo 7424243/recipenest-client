@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditRecipeForm Component renders the UI as expected 1`] = `
+<div
+  className="edit-recipe-container"
+>
+  <h3>
+    Edit Recipe
+  </h3>
+  <form
+    className="edit-recipe-form"
+    onSubmit={[Function]}
+  >
+    <section
+      className="name"
+    >
+      <label
+        htmlFor="name"
+      >
+        Recipe Name: 
+      </label>
+      <input
+        name="name"
+        onChange={[Function]}
+        placeholder="Recipe Name"
+        required={true}
+        type="text"
+        value=""
+      />
+    </section>
+    <section
+      className="url"
+    >
+      <label
+        htmlFor="url"
+      >
+        Recipe URL: 
+      </label>
+      <input
+        name="url"
+        onChange={[Function]}
+        placeholder="https://www.recipe.com"
+        required={true}
+        type="url"
+        value=""
+      />
+    </section>
+    <section
+      className="like"
+    >
+      <label
+        htmlFor="like"
+      >
+        Description: 
+      </label>
+      <textarea
+        cols="30"
+        name="like"
+        onChange={[Function]}
+        placeholder="A brief description and/or keywords to describe the recipe"
+        required={true}
+        rows="10"
+        value=""
+      />
+    </section>
+    <section
+      className="notes"
+    >
+      <label
+        htmlFor="notes"
+      >
+        Notes: 
+      </label>
+      <textarea
+        cols="30"
+        name="notes"
+        onChange={[Function]}
+        placeholder="Modifications for next time? Likes? Dislikes?"
+        required={true}
+        rows="10"
+        value=""
+      />
+    </section>
+    <section
+      className="buttons"
+    >
+      <a
+        href="/recipes"
+        onClick={[Function]}
+      >
+        <button>
+          Cancel
+        </button>
+      </a>
+      <button
+        type="submit"
+      >
+        Save
+      </button>
+    </section>
+  </form>
+</div>
+`;

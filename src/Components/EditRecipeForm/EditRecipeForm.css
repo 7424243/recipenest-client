@@ -1,0 +1,43 @@
+h3 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+input, label, textarea {
+    display: block;
+    width: 100%;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+/* Classes */
+
+.edit-recipe-form {
+    margin: 0 auto;
+    padding: 0 0 40px;
+    max-width: 80%;
+    text-align: left;
+}
+
+.buttons {
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+/* @media */
+
+@media screen and (min-width: 540px) {
+    .edit-recipe-form {
+        padding: 0 0 40px;
+        max-width: 450px;
+    }
+}

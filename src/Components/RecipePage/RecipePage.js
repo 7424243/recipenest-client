@@ -26,7 +26,7 @@ class RecipePage extends Component {
                     <p>Additional Notes: {recipeForPage ? recipeForPage.notes : null}</p>
                 </div>
                 <div className='buttons'>
-                    <button>Edit</button>
+                    <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
                     <button>Delete</button>
                     <Link to='/recipes'><button>Back</button></Link>
                 </div>

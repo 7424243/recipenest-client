@@ -10,6 +10,7 @@ import RecipePage from './Components/RecipePage/RecipePage';
 import AddRecipe from './Components/AddRecipe/AddRecipe';
 import SignUpPage from './Components/SignUpPage/SignUpPage';
 import LoginPage from './Components/LoginPage/LoginPage';
+import EditRecipeForm from './Components/EditRecipeForm/EditRecipeForm';
 
 
 class App extends Component {
@@ -42,11 +43,7 @@ class App extends Component {
   }
 
   //updates state to include edited recipe
-  // handleEditRecipe = editedRecipe => {
-  //   this.setState({
-  //     recipes: []
-  //   })
-  // }
+handleUpdateRecipe = () => {}
 
 
 
@@ -56,6 +53,7 @@ class App extends Component {
       recipes: this.state.recipes,
       deleteRecipe: this.handleDeleteRecipe,
       addRecipe: this.handleAddRecipe,
+      updateRecipe: this.handleUpdateRecipe,
     }
 
     return(
@@ -80,6 +78,10 @@ class App extends Component {
               <Route 
                 path={'/addRecipe'}
                 component={AddRecipe}
+              />
+              <Route 
+                path={'/edit/:id'}
+                component={EditRecipeForm}
               />
               <Route 
                 path={'/signup'}

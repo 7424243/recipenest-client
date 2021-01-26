@@ -30,9 +30,14 @@ exports[`RecipePage Component renders the UI as expected 1`] = `
   <div
     className="buttons"
   >
-    <button>
-      Edit
-    </button>
+    <a
+      href="/edit/Test_Recipe_Id"
+      onClick={[Function]}
+    >
+      <button>
+        Edit
+      </button>
+    </a>
     <button>
       Delete
     </button>
