@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
 import './RecipePage.css'
+import config from '../../config'
 
 class RecipePage extends Component {
 
@@ -12,7 +13,7 @@ class RecipePage extends Component {
         e.preventDefault()
         const recipeId = this.props.match.params.id
         console.log(recipeId)
-        fetch(`http://localhost:8000/api/recipes/${recipeId}`, {
+        fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
             method: 'DELETE'
         })
             .then(res => {
@@ -42,7 +43,7 @@ class RecipePage extends Component {
         return (
             <div className='recipe-page-container'>
                 <div>
-                    <img className='recipe-page-img'src={recipeForPage ? recipeForPage.img_url : null} alt='word cloud from recipe description'/>
+                    <img className='recipe-page-img'src={recipeForPage ? recipeForPage.img_url : null} alt='visual of current recipe'/>
                     <h3>{recipeForPage ? recipeForPage.recipe_name : null}</h3>
                     <a href={recipeForPage ? recipeForPage.url : null} target='_blank' rel='noreferrer'><h5>Clickable Recipe Link</h5></a>
                     <p>Description: {recipeForPage ? recipeForPage.description : null}</p>

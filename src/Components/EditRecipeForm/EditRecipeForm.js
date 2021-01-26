@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import RecipenestContext from '../../RecipenestContext'
 import {Link} from 'react-router-dom'
 import './EditRecipeForm.css'
+import config from '../../config'
 
 class EditRecipeForm extends Component {
 
@@ -24,7 +25,7 @@ class EditRecipeForm extends Component {
     //GET recipe's values
     componentDidMount() {
         const recipeId = this.props.match.params.id
-        fetch(`http://localhost:8000/api/recipes/${recipeId}`, {
+        fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
             method: 'GET'
         })
             .then(res => {
@@ -71,7 +72,7 @@ class EditRecipeForm extends Component {
         const recipeId = this.props.match.params.id
         const {recipe_name, url, description, notes, img_url} = this.state
         const updatedRecipe = {recipeId, recipe_name, url, description, notes, img_url}
-        fetch(`http://localhost:8000/api/recipes/${recipeId}`, {
+        fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
             method: 'PATCH',
             body: JSON.stringify(updatedRecipe),
             headers: {

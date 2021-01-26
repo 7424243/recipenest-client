@@ -10,6 +10,7 @@ import AddRecipe from './Components/AddRecipe/AddRecipe';
 import SignUpPage from './Components/SignUpPage/SignUpPage';
 import LoginPage from './Components/LoginPage/LoginPage';
 import EditRecipeForm from './Components/EditRecipeForm/EditRecipeForm';
+import config from './config'
 
 class App extends Component {
 
@@ -20,7 +21,7 @@ class App extends Component {
 
   //get all recipes when component mounts
   componentDidMount() {
-    fetch(`http://localhost:8000/api/recipes/`, {
+    fetch(`${config.API_ENDPOINT}/recipes`, {
       method: 'GET'
     })
       .then(res => {

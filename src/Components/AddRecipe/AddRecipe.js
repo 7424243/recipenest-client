@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
 import './AddRecipe.css'
+import config from '../../config'
 
 class AddRecipe extends Component {
 
@@ -38,7 +39,7 @@ class AddRecipe extends Component {
     handleSubmit = e => {
         e.preventDefault()
         console.log(this.state)
-        fetch('http://localhost:8000/api/recipes/', {
+        fetch(`${config.API_ENDPOINT}/recipes/`, {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
