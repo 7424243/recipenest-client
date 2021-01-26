@@ -16,8 +16,7 @@ class App extends Component {
 
   //set initial component state
   state = {
-    recipes: [],
-    error: null,
+    recipes: []
   }
 
   //get all recipes when component mounts
