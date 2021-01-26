@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
-import dummyStore from './dummy-store'
 import LandingPage from './Components/LandingPage/LandingPage'
 import './App.css';
 import RecipenestContext from './RecipenestContext';
@@ -16,16 +15,26 @@ import EditRecipeForm from './Components/EditRecipeForm/EditRecipeForm';
 class App extends Component {
 
   //set initial component state
-  constructor(props) {
-    super(props)
-    this.state = {
-      recipes: []
-    }
+  state = {
+    recipes: [],
+    error: null,
   }
 
   //get all recipes when component mounts
   componentDidMount() {
-    this.setState(dummyStore)
+    fetch(`http://localhost:8000/api/recipes/`)
+      .then(res => {
+        if(!res.ok) {
+          return res.json().then(error => Promise.reject(error))
+        }
+        return res.json()
+      })
+      .then(recipes => {
+        this.setState({recipes})
+      })
+      .catch(error => {
+        console.error({error})
+      })
   }
 
   //updates state to include recipes that do not have the specified recipeId
@@ -43,7 +52,13 @@ class App extends Component {
   }
 
   //updates state to include edited recipe
-handleUpdateRecipe = () => {}
+handleUpdateRecipe = (updatedRecipe) => {
+  const newRecipes = this.state.recipes.map(recipe => 
+    (recipe.id === updatedRecipe.id) ? updatedRecipe : recipe)
+    this.setState({
+      recipes: newRecipes
+    })
+}
 
 
 

@@ -8,6 +8,29 @@ class RecipePage extends Component {
     //allow access to context
     static contextType = RecipenestContext
 
+    handleClickDelete = e => {
+        e.preventDefault()
+        const recipeId = this.props.match.params.id
+        console.log(recipeId)
+        fetch(`http://localhost:8000/api/recipes/${recipeId}`, {
+            method: 'DELETE'
+        })
+            .then(res => {
+                console.log(res)
+                if(!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+                return res
+            })
+            .then(() => {
+                this.context.deleteRecipe(recipeId)
+                this.props.history.push('/recipes')
+            })
+            .catch(error => {
+                console.error({error})
+            })
+    }
+
     render() {
         
         const recipeId = parseInt(this.props.match.params.id)
@@ -27,7 +50,7 @@ class RecipePage extends Component {
                 </div>
                 <div className='buttons'>
                     <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
-                    <button>Delete</button>
+                    <button onClick={this.handleClickDelete}>Delete</button>
                     <Link to='/recipes'><button>Back</button></Link>
                 </div>
             </div> 
