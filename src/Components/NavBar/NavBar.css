@@ -5,6 +5,10 @@ nav {
     font-size: medium;
 }
 
+.nav-link:active {
+    font-weight: 900;
+}
+
 
 /* @media */
 

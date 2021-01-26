@@ -5,9 +5,9 @@ import './NavBar.css'
 function NavBar() {
     return (
         <nav>
-            <Link to='/recipes'>All Recipes |</Link>
-            <Link to='/recipes'> My Recipes |</Link>
-            <Link to='/login'> Login </Link>
+            <Link to='/recipes' className='nav-link'>All Recipes |</Link>
+            <Link to='/recipes' className='nav-link'> My Recipes |</Link>
+            <Link to='/login' className='nav-link'> Login </Link>
         </nav>
     )
 }
