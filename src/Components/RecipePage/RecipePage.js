@@ -17,7 +17,7 @@ class RecipePage extends Component {
         fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
             method: 'DELETE', 
             headers: {
-                'Authorization': `basic ${TokenService.getAuthToken()}`
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {

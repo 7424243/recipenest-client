@@ -13,7 +13,7 @@ class AddRecipe extends Component {
         description: '',
         notes: '',
         img_url: '',
-        user_id: 3,
+        user_id: 2
     }
 
     //allow access to context
@@ -45,7 +45,7 @@ class AddRecipe extends Component {
             body: JSON.stringify(this.state),
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `basic ${TokenService.getAuthToken()}`
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {

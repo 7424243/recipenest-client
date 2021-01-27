@@ -78,7 +78,7 @@ class EditRecipeForm extends Component {
             body: JSON.stringify(updatedRecipe),
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `basic ${TokenService.getAuthToken()}`
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {
