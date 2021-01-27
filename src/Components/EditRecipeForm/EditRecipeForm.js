@@ -78,12 +78,12 @@ class EditRecipeForm extends Component {
             body: JSON.stringify(updatedRecipe),
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`
+                'Authorization': `basic ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {
                 if(!res.ok) {
-                    return res.json().then(error => Promise.recipeId(error))
+                    return res.json().then(error => Promise.reject(error))
                 }
             })
             .then(() => {
