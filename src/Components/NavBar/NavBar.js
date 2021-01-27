@@ -11,7 +11,7 @@ class NavBar extends Component {
 
     logoutLink() {
         return (
-            <Link to='/' className='nav-link' onClick={this.handleLogoutClick}> Logout </Link>
+            <Link to='/recipes' className='nav-link' onClick={this.handleLogoutClick}> Logout </Link>
         )
     }
 

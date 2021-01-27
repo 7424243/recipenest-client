@@ -54,8 +54,15 @@ class RecipePage extends Component {
                     <p>Notes: {recipeForPage ? recipeForPage.notes : null}</p>
                 </div>
                 <div className='buttons'>
-                    <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
-                    <button onClick={this.handleClickDelete}>Delete</button>
+                    {TokenService.hasAuthToken() 
+                        ? <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
+                        : null
+                    }
+                    {TokenService.hasAuthToken()
+                        ? <button onClick={this.handleClickDelete}>Delete</button>
+                        : null
+                    }
+                    
                     <Link to='/recipes'><button>Back</button></Link>
                 </div>
             </div> 

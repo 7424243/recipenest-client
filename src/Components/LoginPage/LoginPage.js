@@ -11,14 +11,14 @@ class LoginPage extends Component {
         password: ''
     }
 
-    handleSubmitBasicAuth = e => {
-        e.preventDefault()
-        const {user_name, password} = this.state
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(user_name, password)
-        )
-        this.props.history.push('/recipes')
-    }
+    // handleSubmitBasicAuth = e => {
+    //     e.preventDefault()
+    //     const {user_name, password} = this.state
+    //     TokenService.saveAuthToken(
+    //         TokenService.makeBasicAuthToken(user_name, password)
+    //     )
+    //     this.props.history.push('/recipes')
+    // }
 
     handleSubmitJwtAuth = e => {
         e.preventDefault()

@@ -13,7 +13,7 @@ class AddRecipe extends Component {
         description: '',
         notes: '',
         img_url: '',
-        user_id: 2
+        user_id: 1
     }
 
     //allow access to context
