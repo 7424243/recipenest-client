@@ -5,9 +5,13 @@ import './NavBar.css'
 
 class NavBar extends Component {
 
+    handleLogoutClick = () => {
+        TokenService.clearAuthToken()
+    }
+
     logoutLink() {
         return (
-            <Link to='/' className='nav-link'> Logout </Link>
+            <Link to='/' className='nav-link' onClick={this.handleLogoutClick}> Logout </Link>
         )
     }
 
