@@ -3,6 +3,7 @@ import RecipenestContext from '../../RecipenestContext'
 import {Link} from 'react-router-dom'
 import './EditRecipeForm.css'
 import config from '../../config'
+import TokenService from '../../services/token-service'
 
 class EditRecipeForm extends Component {
 
@@ -76,7 +77,8 @@ class EditRecipeForm extends Component {
             method: 'PATCH',
             body: JSON.stringify(updatedRecipe),
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `basic ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {

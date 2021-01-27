@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
 import './RecipePage.css'
 import config from '../../config'
+import TokenService from '../../services/token-service'
 
 class RecipePage extends Component {
 
@@ -14,7 +15,10 @@ class RecipePage extends Component {
         const recipeId = this.props.match.params.id
         console.log(recipeId)
         fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
-            method: 'DELETE'
+            method: 'DELETE', 
+            headers: {
+                'authorzation': `basic ${TokenService.getAuthToken()}`
+            }
         })
             .then(res => {
                 console.log(res)

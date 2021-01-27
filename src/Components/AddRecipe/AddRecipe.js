@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
+import TokenService from '../../services/token-service'
 import './AddRecipe.css'
 import config from '../../config'
 
@@ -43,7 +44,8 @@ class AddRecipe extends Component {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `basic ${TokenService.getAuthToken()}`
             }
         })
             .then(res => {
