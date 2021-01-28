@@ -1,5 +1,8 @@
+//To-Do:
+//Add PropTypes
+//Add Error Message(s)
+
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
 import TokenService from '../../services/token-service'
 import './AddRecipe.css'
@@ -37,13 +40,8 @@ class AddRecipe extends Component {
     //POST updated values
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state)
-        //this.state.user_id = TokenService.getUserIdFromToken()
         let payload = Object.assign({}, this.state)
         payload.user_id = TokenService.getUserIdFromToken()
-        // this.setState({
-        //     user_id: TokenService.getUserIdFromToken()
-        // })
         fetch(`${config.API_ENDPOINT}/recipes/`, {
             method: 'POST',
             body: JSON.stringify(payload),
@@ -60,7 +58,7 @@ class AddRecipe extends Component {
             })
             .then(data => {
                 this.context.addRecipe(data)
-                this.props.history.push('/recipes')
+                this.props.history.push('/my-recipes')
             })
             .catch(error => {
                 console.error({error})
@@ -122,7 +120,7 @@ class AddRecipe extends Component {
                             />
                         </section>
                         <section className='buttons'>
-                            <Link to='/recipes'><button>Cancel</button></Link>
+                            <button onClick={this.props.history.goBack}>Cancel</button>
                             <button type='submit'>Save</button>
                         </section>
                     </form>

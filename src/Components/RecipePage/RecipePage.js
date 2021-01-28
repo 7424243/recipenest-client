@@ -7,10 +7,6 @@ import TokenService from '../../services/token-service'
 
 class RecipePage extends Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     //allow access to context
     static contextType = RecipenestContext
 
@@ -44,7 +40,7 @@ class RecipePage extends Component {
         const recipeId = parseInt(this.props.match.params.id)
         const {recipes} = this.context
         const getRecipe = (recipes, recipeId) =>
-            recipes.find(recipe => recipe.id === recipeId)
+            recipes.find(recipe => recipe.id == recipeId)
         const recipeForPage = getRecipe(recipes, recipeId)
         const currentUserId = TokenService.getUserIdFromToken()
         const recipeUserId = recipeForPage.user_id

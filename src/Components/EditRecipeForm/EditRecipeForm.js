@@ -1,3 +1,7 @@
+//To-Do:
+//Add PropTypes
+//Add Error Message(s)
+
 import React, {Component} from 'react'
 import RecipenestContext from '../../RecipenestContext'
 import {Link} from 'react-router-dom'
@@ -68,8 +72,8 @@ class EditRecipeForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         const id = parseInt(this.props.match.params.id)
-        const {recipe_name, url, description, notes, img_url} = this.state
-        const updatedRecipe = {id, recipe_name, url, description, notes, img_url}
+        const {recipe_name, url, description, notes, img_url, user_id} = this.state
+        const updatedRecipe = {id, recipe_name, url, description, notes, img_url, user_id}
         fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
             method: 'PATCH',
             body: JSON.stringify(updatedRecipe),
@@ -86,7 +90,7 @@ class EditRecipeForm extends Component {
             .then(() => {
                 this.resetFields(updatedRecipe)
                 this.context.updateRecipe(updatedRecipe)
-                this.props.history.push('/recipes')
+                this.props.history.push('/my-recipes')
             })
             .catch(error => {
                 console.error({error})
