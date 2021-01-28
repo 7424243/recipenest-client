@@ -50,6 +50,7 @@ class MyRecipes extends Component {
 
         return (
             <>
+                <h3>My Recipes</h3>
                 <ul>{recipeList}</ul>
                 <div className='container'>
                 {TokenService.hasAuthToken() 

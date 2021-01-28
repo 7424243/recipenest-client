@@ -13,8 +13,8 @@ class AddRecipe extends Component {
         url: '',
         notes: '',
         img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
-        user_id: 1
     }
+
 
     //allow access to context
     static contextType = RecipenestContext
@@ -38,9 +38,15 @@ class AddRecipe extends Component {
     handleSubmit = e => {
         e.preventDefault()
         console.log(this.state)
+        //this.state.user_id = TokenService.getUserIdFromToken()
+        let payload = Object.assign({}, this.state)
+        payload.user_id = TokenService.getUserIdFromToken()
+        // this.setState({
+        //     user_id: TokenService.getUserIdFromToken()
+        // })
         fetch(`${config.API_ENDPOINT}/recipes/`, {
             method: 'POST',
-            body: JSON.stringify(this.state),
+            body: JSON.stringify(payload),
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`

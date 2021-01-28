@@ -58,11 +58,14 @@ class App extends Component {
 
   //updates state to include edited recipe
 handleUpdateRecipe = (updatedRecipe) => {
-  const newRecipes = this.state.recipes.map(recipe => 
-    (recipe.id === updatedRecipe.id) ? updatedRecipe : recipe)
-    this.setState({
-      recipes: newRecipes
-    })
+  const recipeIndex = this.state.recipes.findIndex(recipe => 
+    (recipe.id == updatedRecipe.id))
+  const clonedRecipes = [...this.state.recipes]
+  clonedRecipes[recipeIndex] = updatedRecipe
+  this.setState({
+    recipes: clonedRecipes
+  })
+
 }
 
 //udpates state's loginStatus

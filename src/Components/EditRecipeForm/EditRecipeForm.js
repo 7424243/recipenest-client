@@ -44,6 +44,7 @@ class EditRecipeForm extends Component {
                     img_url: data.img_url,
                     user_id: data.user_id
                 })
+                
             })
             .catch(error => {
                 console.error(error)
@@ -71,10 +72,10 @@ class EditRecipeForm extends Component {
     //PATCH updated values
     handleSubmit = e => {
         e.preventDefault()
-        const recipeId = this.props.match.params.id
+        const id = parseInt(this.props.match.params.id)
         const {recipe_name, url, description, notes, img_url} = this.state
-        const updatedRecipe = {recipeId, recipe_name, url, description, notes, img_url}
-        fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
+        const updatedRecipe = {id, recipe_name, url, description, notes, img_url}
+        fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
             method: 'PATCH',
             body: JSON.stringify(updatedRecipe),
             headers: {

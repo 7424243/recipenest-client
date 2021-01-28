@@ -25,6 +25,7 @@ const TokenService = {
         console.log('decodedToken', decodedToken)
         const user_id = decodedToken.user_id
         console.log('user_id', user_id)
+        return user_id
     }
 }
 
