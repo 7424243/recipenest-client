@@ -17,7 +17,8 @@ class App extends Component {
 
   //set initial component state
   state = {
-    recipes: []
+    recipes: [],
+    loginStatus: false
   }
 
   //get all recipes when component mounts
@@ -62,7 +63,15 @@ handleUpdateRecipe = (updatedRecipe) => {
     })
 }
 
+//udpates state's loginStatus
+onLoginSuccess = () => {
+  this.setState({loginStatus: true})
+}
 
+//updates state's logoutStatus
+onLogoutSuccess = () => {
+  this.setState({loginStatus: false})
+}
 
   render () {
 
@@ -71,6 +80,8 @@ handleUpdateRecipe = (updatedRecipe) => {
       deleteRecipe: this.handleDeleteRecipe,
       addRecipe: this.handleAddRecipe,
       updateRecipe: this.handleUpdateRecipe,
+      onLoginSuccess: this.onLoginSuccess,
+      onLogoutSuccess: this.onLogoutSuccess,
     }
 
     return(

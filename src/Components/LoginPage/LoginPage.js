@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import config from '../../config'
 import './LoginPage.css'
+import RecipenestContext from '../../RecipenestContext'
 
 class LoginPage extends Component {
 
-    state = {
-        user_name: '',
-        password: ''
+    constructor(props) {
+        super(props)
+        this.state = {
+            user_name: '',
+            password: '',
+        }
     }
+
+    static contextType = RecipenestContext
 
     // handleSubmitBasicAuth = e => {
     //     e.preventDefault()
@@ -36,8 +42,16 @@ class LoginPage extends Component {
                 return res.json()
             })
             .then(res => {
+                console.log(res)
+                
                 TokenService.saveAuthToken(res.authToken)
+                this.context.onLoginSuccess()
+                
                 this.props.history.push('/recipes')
+                
+            })
+            .catch(err => {
+                console.error({err})
             })
     }
 

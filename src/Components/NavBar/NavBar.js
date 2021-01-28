@@ -1,12 +1,16 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
+import RecipenestContext from '../../RecipenestContext'
 import TokenService from '../../services/token-service'
 import './NavBar.css'
 
 class NavBar extends Component {
 
+    static contextType = RecipenestContext
+
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        this.context.onLogoutSuccess()
     }
 
     logoutLink() {
@@ -20,6 +24,7 @@ class NavBar extends Component {
             <Link to='/login' className='nav-link'> Login </Link>
         )
     }
+
     
     render() {
         return (

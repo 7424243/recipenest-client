@@ -6,6 +6,8 @@ const RecipenestContext = React.createContext({
     deleteRecipe: () => {},
     addRecipe: () => {},
     updateRecipe: () => {},
+    onLoginSuccess: () => {},
+    onLogoutSuccess: () => {}
 })
 
 export default RecipenestContext

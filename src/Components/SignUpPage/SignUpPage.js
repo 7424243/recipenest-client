@@ -10,7 +10,7 @@ class SignUpPage extends Component {
         full_name: '',
         user_name: '',
         password: '',
-        nickname: ''
+        nickname: '',
     }
 
     handleSubmit = e => {
