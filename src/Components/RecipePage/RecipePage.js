@@ -50,7 +50,6 @@ class RecipePage extends Component {
                     <img className='recipe-page-img'src={recipeForPage ? recipeForPage.img_url : null} alt='visual of current recipe'/>
                     <h3>{recipeForPage ? recipeForPage.recipe_name : null}</h3>
                     <a href={recipeForPage ? recipeForPage.url : null} target='_blank' rel='noreferrer'><h5>Clickable Recipe Link</h5></a>
-                    <p>Description: {recipeForPage ? recipeForPage.description : null}</p>
                     <p>Notes: {recipeForPage ? recipeForPage.notes : null}</p>
                 </div>
                 <div className='buttons'>

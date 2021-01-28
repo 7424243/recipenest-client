@@ -11,9 +11,8 @@ class AddRecipe extends Component {
     state = {
         recipe_name: '',
         url: '',
-        description: '',
         notes: '',
-        img_url: '',
+        img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
         user_id: 1
     }
 
@@ -27,15 +26,13 @@ class AddRecipe extends Component {
     addUrl = e => {
         this.setState({url: e.target.value})
     }
-    addDescription = e => {
-        this.setState({description: e.target.value})
-    }
     addNotes = e => {
         this.setState({notes: e.target.value})
     }
     addImgUrl = e => {
         this.setState({img_url: e.target.value})
     }
+
 
     //POST updated values
     handleSubmit = e => {
@@ -94,18 +91,7 @@ class AddRecipe extends Component {
                                 required 
                                 onChange={this.addUrl}
                             />
-                        </section>
-                        <section className='like'>
-                            <label htmlFor='like'>Description: </label>
-                            <textarea 
-                                name='like' 
-                                cols='30' 
-                                rows='5' 
-                                aria-label='A brief description and/or keywords to describe the recipe '
-                                placeholder='A brief description and/or keywords to describe the recipe' 
-                                required 
-                                onChange={this.addDescription}
-                            />
+
                         </section>
                         <section className='notes'>
                             <label htmlFor='notes'>Notes: </label>
@@ -120,12 +106,12 @@ class AddRecipe extends Component {
                             />
                         </section>
                         <section className='url'>
-                            <label htmlFor='img-url'>Image URL: </label>
+                            <label htmlFor='img-url'>Image URL: (or leave blank to use a default image)</label>
                             <input 
                                 type='url' 
                                 name='img-url' 
+                                aria-label='add image url or leave blank to use a default image'
                                 placeholder='https://www.recipe.com' 
-                                required 
                                 onChange={this.addImgUrl}
                             />
                         </section>
