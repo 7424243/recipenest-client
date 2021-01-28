@@ -16,6 +16,16 @@ const TokenService = {
     makeBasicAuthToken(user_name, password) {
         return window.btoa(`${user_name}: ${password}`)
     },
+    getUserIdFromToken() {
+        const authToken = TokenService.getAuthToken()
+        const bearerToken = authToken.slice(7, authToken.length)
+        const base64URL = bearerToken.split('.')[1]
+        let base64 = base64URL.replace('-', '+').replace('_', '/')
+        let decodedToken = JSON.parse(Buffer.from(base64, 'base64').toString('binary'))
+        console.log('decodedToken', decodedToken)
+        const user_id = decodedToken.user_id
+        console.log('user_id', user_id)
+    }
 }
 
 export default TokenService

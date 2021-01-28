@@ -12,13 +12,15 @@ import LoginPage from './Components/LoginPage/LoginPage';
 import EditRecipeForm from './Components/EditRecipeForm/EditRecipeForm';
 import config from './config'
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary'
+import MyRecipes from './Components/MyRecipes/MyRecipes'
 
 class App extends Component {
 
   //set initial component state
   state = {
     recipes: [],
-    loginStatus: false
+    loginStatus: false,
+    signUpStatus: false
   }
 
   //get all recipes when component mounts
@@ -73,6 +75,11 @@ onLogoutSuccess = () => {
   this.setState({loginStatus: false})
 }
 
+//updates state's signUpStatus
+onSignUpSuccess = () => {
+  this.setState({signUpStatus: true})
+}
+
   render () {
 
     const contextValue = {
@@ -82,6 +89,7 @@ onLogoutSuccess = () => {
       updateRecipe: this.handleUpdateRecipe,
       onLoginSuccess: this.onLoginSuccess,
       onLogoutSuccess: this.onLogoutSuccess,
+      onSignUpSuccess: this.onSignUpSuccess,
     }
 
     return(
@@ -105,6 +113,10 @@ onLogoutSuccess = () => {
                 <Route 
                   path={'/recipe/:id'}
                   component={RecipePage}
+                />
+                <Route 
+                  path={'/my-recipes'}
+                  component={MyRecipes}
                 />
                 <Route 
                   path={'/addRecipe'}

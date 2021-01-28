@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import config from '../../config'
+import RecipenestContext from '../../RecipenestContext'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import './SignUpPage.css'
 
@@ -12,6 +13,8 @@ class SignUpPage extends Component {
         password: '',
         nickname: '',
     }
+
+    static contextType = RecipenestContext
 
     handleSubmit = e => {
         e.preventDefault()
@@ -29,7 +32,11 @@ class SignUpPage extends Component {
                 return res.json()
             })
             .then(() => {
+                this.context.onSignUpSuccess()
                 this.props.history.push('/login')
+            })
+            .catch(err => {
+                console.error({err})
             })
     }
 

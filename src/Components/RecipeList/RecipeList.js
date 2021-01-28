@@ -24,15 +24,7 @@ class RecipeList extends Component {
         return (
             <div>
                 <ul className='recipe-list'>{recipeList}</ul>
-                <div className='container'>
-                    {TokenService.hasAuthToken() 
-                        ? <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
-                        : null
-                    }
-                </div>
-                <div className='pagination'>
-                    <p>Page 1 ... <button>{'>>'}</button></p>
-                </div>
+
             </div>
 
         )
