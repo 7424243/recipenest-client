@@ -1,3 +1,7 @@
+//To-Do:
+//Add PropTypes
+//Add Error Message(s)
+
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import config from '../../config'

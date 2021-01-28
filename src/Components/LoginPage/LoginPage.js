@@ -1,3 +1,7 @@
+//To-Do:
+//Add PropTypes
+//Add Error Message(s)
+
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
@@ -16,15 +20,6 @@ class LoginPage extends Component {
     }
 
     static contextType = RecipenestContext
-
-    // handleSubmitBasicAuth = e => {
-    //     e.preventDefault()
-    //     const {user_name, password} = this.state
-    //     TokenService.saveAuthToken(
-    //         TokenService.makeBasicAuthToken(user_name, password)
-    //     )
-    //     this.props.history.push('/recipes')
-    // }
 
     handleSubmitJwtAuth = e => {
         e.preventDefault()
