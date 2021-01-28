@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
+import TokenService from '../../services/token-service'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import './RecipeList.css'
 
@@ -24,7 +25,10 @@ class RecipeList extends Component {
             <div>
                 <ul className='recipe-list'>{recipeList}</ul>
                 <div className='container'>
-                    <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
+                    {TokenService.hasAuthToken() 
+                        ? <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
+                        : null
+                    }
                 </div>
                 <div className='pagination'>
                     <p>Page 1 ... <button>{'>>'}</button></p>

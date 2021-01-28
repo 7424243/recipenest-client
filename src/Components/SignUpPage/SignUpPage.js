@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import config from '../../config'
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import './SignUpPage.css'
 
 class SignUpPage extends Component {
@@ -53,49 +54,52 @@ class SignUpPage extends Component {
         return (
             <div className='sign-up-container'>
                 <h3>Sign Up!</h3>
-                <form 
-                    className='sign-up-form'
-                    onSubmit={this.handleSubmit}
-                >
-                    <section className='fullname'>
-                        <label htmlFor='fullname'>Full Name: </label>
-                        <input 
-                            type='text' 
-                            placeholder='Full Name'
-                            required 
-                            onChange={this.handleAddFullname}
-                        />
-                    </section>
-                    <section className='url'>
-                        <label htmlFor='username'>Username: </label>
-                        <input 
-                            type='text' 
-                            placeholder='username' 
-                            required
-                            onChange={this.handleAddUsername}
-                        />
-                    </section>
-                    <section className='password'>
-                        <label htmlFor='password'>Password: </label>
-                        <input 
-                            type='password' 
-                            placeholder='password' 
-                            required
-                            onChange={this.handleAddPassword}
-                        />
-                    </section>
-                    <section className='nickname'>
-                        <label htmlFor='nickname'>Nickname (option): </label>
-                        <input 
-                            type='text' 
-                            placeholder='optional nickname' 
-                            onChange={this.handleAddNickname}/>
-                    </section>
-                    <section className='buttons'>
-                        <Link to='/recipes'><button>Cancel</button></Link>
-                        <button type='submit'>Submit</button>
-                    </section>
-                </form>
+                <ErrorBoundary>
+                    <form 
+                        className='sign-up-form'
+                        onSubmit={this.handleSubmit}
+                    >
+                        <section className='fullname'>
+                            <label htmlFor='fullname'>Full Name: </label>
+                            <input 
+                                type='text' 
+                                placeholder='Full Name'
+                                required 
+                                onChange={this.handleAddFullname}
+                            />
+                        </section>
+                        <section className='url'>
+                            <label htmlFor='username'>Username: </label>
+                            <input 
+                                type='text' 
+                                placeholder='username' 
+                                required
+                                onChange={this.handleAddUsername}
+                            />
+                        </section>
+                        <section className='password'>
+                            <label htmlFor='password'>Password: </label>
+                            <input 
+                                type='password' 
+                                placeholder='password' 
+                                required
+                                onChange={this.handleAddPassword}
+                            />
+                        </section>
+                        <section className='nickname'>
+                            <label htmlFor='nickname'>Nickname (option): </label>
+                            <input 
+                                type='text' 
+                                placeholder='optional nickname' 
+                                onChange={this.handleAddNickname}/>
+                        </section>
+                        <section className='buttons'>
+                            <Link to='/recipes'><button>Cancel</button></Link>
+                            <button type='submit'>Submit</button>
+                        </section>
+                    </form>
+                </ErrorBoundary>
+                
             </div>
         )
     }

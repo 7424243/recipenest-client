@@ -9,6 +9,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
   </h3>
   <form
     className="sign-up-form"
+    onSubmit={[Function]}
   >
     <section
       className="fullname"
@@ -19,7 +20,9 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Full Name: 
       </label>
       <input
+        onChange={[Function]}
         placeholder="Full Name"
+        required={true}
         type="text"
       />
     </section>
@@ -32,7 +35,9 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Username: 
       </label>
       <input
+        onChange={[Function]}
         placeholder="username"
+        required={true}
         type="text"
       />
     </section>
@@ -45,8 +50,10 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Password: 
       </label>
       <input
+        onChange={[Function]}
         placeholder="password"
-        type="text"
+        required={true}
+        type="password"
       />
     </section>
     <section
@@ -58,6 +65,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Nickname (option): 
       </label>
       <input
+        onChange={[Function]}
         placeholder="optional nickname"
         type="text"
       />
@@ -73,7 +81,9 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
           Cancel
         </button>
       </a>
-      <button>
+      <button
+        type="submit"
+      >
         Submit
       </button>
     </section>

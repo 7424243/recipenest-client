@@ -9,6 +9,7 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
   </h3>
   <form
     className="add-recipe-form"
+    onSubmit={[Function]}
   >
     <section
       className="name"
@@ -19,7 +20,11 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         Recipe Name: 
       </label>
       <input
-        placeholder="Recipe Name"
+        aria-label="recipe name"
+        name="name"
+        onChange={[Function]}
+        placeholder="recipe name"
+        required={true}
         type="text"
       />
     </section>
@@ -32,7 +37,11 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         Recipe URL: 
       </label>
       <input
+        aria-label="recipe url"
+        name="url"
+        onChange={[Function]}
         placeholder="https://www.recipe.com"
+        required={true}
         type="url"
       />
     </section>
@@ -45,10 +54,13 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         Description: 
       </label>
       <textarea
+        aria-label="A brief description and/or keywords to describe the recipe "
         cols="30"
         name="like"
+        onChange={[Function]}
         placeholder="A brief description and/or keywords to describe the recipe"
-        rows="10"
+        required={true}
+        rows="5"
       />
     </section>
     <section
@@ -60,10 +72,29 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         Notes: 
       </label>
       <textarea
+        aria-label="Modifications for next time? Likes? Dislikes?"
         cols="30"
         name="notes"
+        onChange={[Function]}
         placeholder="Modifications for next time? Likes? Dislikes?"
-        rows="10"
+        required={true}
+        rows="5"
+      />
+    </section>
+    <section
+      className="url"
+    >
+      <label
+        htmlFor="img-url"
+      >
+        Image URL: 
+      </label>
+      <input
+        name="img-url"
+        onChange={[Function]}
+        placeholder="https://www.recipe.com"
+        required={true}
+        type="url"
       />
     </section>
     <section
@@ -77,7 +108,9 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
           Cancel
         </button>
       </a>
-      <button>
+      <button
+        type="submit"
+      >
         Save
       </button>
     </section>

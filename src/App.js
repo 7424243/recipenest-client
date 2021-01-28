@@ -11,6 +11,7 @@ import SignUpPage from './Components/SignUpPage/SignUpPage';
 import LoginPage from './Components/LoginPage/LoginPage';
 import EditRecipeForm from './Components/EditRecipeForm/EditRecipeForm';
 import config from './config'
+import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary'
 
 class App extends Component {
 
@@ -74,39 +75,43 @@ handleUpdateRecipe = (updatedRecipe) => {
 
     return(
       <div className='app-container'>
-        <Header />
+        <ErrorBoundary>
+          <Header />
+        </ErrorBoundary>
         <RecipenestContext.Provider value={contextValue}>
           <div>
             <Switch>
-              <Route
-                exact 
-                path={'/'}
-                component={LandingPage}
-              />
-              <Route 
-                path={'/recipes'}
-                component={RecipeList}
-              />
-              <Route 
-                path={'/recipe/:id'}
-                component={RecipePage}
-              />
-              <Route 
-                path={'/addRecipe'}
-                component={AddRecipe}
-              />
-              <Route 
-                path={'/edit/:id'}
-                component={EditRecipeForm}
-              />
-              <Route 
-                path={'/signup'}
-                component={SignUpPage}
-              />
-              <Route 
-                path={'/login'}
-                component={LoginPage}
-              />
+              <ErrorBoundary>
+                <Route
+                  exact 
+                  path={'/'}
+                  component={LandingPage}
+                />
+                <Route 
+                  path={'/recipes'}
+                  component={RecipeList}
+                />
+                <Route 
+                  path={'/recipe/:id'}
+                  component={RecipePage}
+                />
+                <Route 
+                  path={'/addRecipe'}
+                  component={AddRecipe}
+                />
+                <Route 
+                  path={'/edit/:id'}
+                  component={EditRecipeForm}
+                />
+                <Route 
+                  path={'/signup'}
+                  component={SignUpPage}
+                />
+                <Route 
+                  path={'/login'}
+                  component={LoginPage}
+                />
+              </ErrorBoundary>
             </Switch>
           </div>
         </RecipenestContext.Provider>

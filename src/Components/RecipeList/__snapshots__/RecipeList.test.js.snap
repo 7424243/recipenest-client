@@ -7,18 +7,7 @@ exports[`RecipeList Component renders the UI as expected 1`] = `
   />
   <div
     className="container"
-  >
-    <a
-      href="/addRecipe"
-      onClick={[Function]}
-    >
-      <button
-        className="add-button"
-      >
-        +
-      </button>
-    </a>
-  </div>
+  />
   <div
     className="pagination"
   >
