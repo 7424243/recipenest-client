@@ -12,9 +12,9 @@ class RecipePage extends Component {
 
     handleClickDelete = e => {
         e.preventDefault()
-        const recipeId = this.props.match.params.id
-        console.log(recipeId)
-        fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
+        const id = parseInt(this.props.match.params.id)
+        console.log(id)
+        fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
             method: 'DELETE', 
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
@@ -28,7 +28,7 @@ class RecipePage extends Component {
                 return res
             })
             .then(() => {
-                this.context.deleteRecipe(recipeId)
+                this.context.deleteRecipe(id)
                 this.props.history.push('/recipes')
             })
             .catch(error => {
