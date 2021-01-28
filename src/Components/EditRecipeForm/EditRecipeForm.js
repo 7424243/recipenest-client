@@ -12,7 +12,6 @@ class EditRecipeForm extends Component {
         id: '',
         recipe_name: '',
         url: '',
-        description: '',
         notes: '',
         img_url: '',
         date_created: '',
@@ -39,7 +38,6 @@ class EditRecipeForm extends Component {
                 this.setState({
                     recipe_name: data.recipe_name,
                     url: data.url,
-                    description: data.description,
                     notes: data.notes,
                     img_url: data.img_url,
                     user_id: data.user_id
@@ -58,9 +56,6 @@ class EditRecipeForm extends Component {
     }
     handleChangeUrl = e => {
         this.setState({url: e.target.value})
-    }
-    handleChangeDescription = e => {
-        this.setState({description: e.target.value})
     }
     handleChangeNotes = e => {
         this.setState({notes: e.target.value})
@@ -103,7 +98,6 @@ class EditRecipeForm extends Component {
         this.setState({
             recipe_name: newFields.recipe_name || '',
             url: newFields.url || '',
-            description: newFields.description || '',
             notes: newFields.notes || '',
             img_url: newFields.img_url || ''
         })
@@ -138,18 +132,6 @@ class EditRecipeForm extends Component {
                             required 
                             value={this.state.url} 
                             onChange={this.handleChangeUrl}/>
-                    </section>
-                    <section className='like'>
-                        <label htmlFor='like'>Description: </label>
-                        <textarea 
-                            name='like' 
-                            cols='30' 
-                            rows='5' 
-                            aria-label={`description: ${this.state.description}`}
-                            required 
-                            value={this.state.description} 
-                            onChange={this.handleChangeDescription} 
-                        />
                     </section>
                     <section className='notes'>
                         <label htmlFor='notes'>Notes: </label>
