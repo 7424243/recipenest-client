@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
-import TokenService from '../../services/token-service'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import './RecipeList.css'
 
@@ -23,8 +21,8 @@ class RecipeList extends Component {
         )
         return (
             <div>
+                <h3>All Recipes</h3>
                 <ul className='recipe-list'>{recipeList}</ul>
-
             </div>
 
         )

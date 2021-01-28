@@ -4,6 +4,7 @@ import config from '../../config'
 import RecipenestContext from '../../RecipenestContext'
 import TokenService from '../../services/token-service'
 import RecipeCard from '../RecipeCard/RecipeCard'
+import './MyRecipes.css'
 
 class MyRecipes extends Component {
 
@@ -15,7 +16,7 @@ class MyRecipes extends Component {
 
     componentDidMount() {
         const user_id = TokenService.getUserIdFromToken()
-        fetch(`${config.API_ENDPOINT}/recipes/users/${this.state.user_id}`, {
+        fetch(`${config.API_ENDPOINT}/recipes/users/${user_id}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -51,7 +52,7 @@ class MyRecipes extends Component {
         return (
             <>
                 <h3>My Recipes</h3>
-                <ul>{recipeList}</ul>
+                <ul className='my-recipes-list'>{recipeList}</ul>
                 <div className='container'>
                 {TokenService.hasAuthToken() 
                     ? <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>

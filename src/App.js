@@ -59,7 +59,7 @@ class App extends Component {
   //updates state to include edited recipe
 handleUpdateRecipe = (updatedRecipe) => {
   const recipeIndex = this.state.recipes.findIndex(recipe => 
-    (recipe.id == updatedRecipe.id))
+    (recipe.id === updatedRecipe.id))
   const clonedRecipes = [...this.state.recipes]
   clonedRecipes[recipeIndex] = updatedRecipe
   this.setState({
@@ -76,6 +76,7 @@ onLoginSuccess = () => {
 //updates state's logoutStatus
 onLogoutSuccess = () => {
   this.setState({loginStatus: false})
+  console.log(this.state)
 }
 
 //updates state's signUpStatus

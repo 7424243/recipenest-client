@@ -2,21 +2,11 @@
 
 exports[`RecipeList Component renders the UI as expected 1`] = `
 <div>
+  <h3>
+    All Recipes
+  </h3>
   <ul
     className="recipe-list"
   />
-  <div
-    className="container"
-  />
-  <div
-    className="pagination"
-  >
-    <p>
-      Page 1 ... 
-      <button>
-        &gt;&gt;
-      </button>
-    </p>
-  </div>
 </div>
 `;

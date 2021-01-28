@@ -3,18 +3,14 @@
 exports[`NavBar Component renders the UI as expected 1`] = `
 <nav>
   <a
+    className="nav-link"
     href="/recipes"
     onClick={[Function]}
   >
     All Recipes |
   </a>
   <a
-    href="/recipes"
-    onClick={[Function]}
-  >
-     My Recipes |
-  </a>
-  <a
+    className="nav-link"
     href="/login"
     onClick={[Function]}
   >

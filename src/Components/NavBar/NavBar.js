@@ -30,7 +30,8 @@ class NavBar extends Component {
         return (
             <nav>
                 <Link to='/recipes' className='nav-link'>All Recipes |</Link>
-                <Link to='/my-recipes' className='nav-link'> My Recipes |</Link>
+                {TokenService.hasAuthToken() ? <Link to='/my-recipes' className='nav-link'> My Recipes |</Link> : null}
+                
                 {TokenService.hasAuthToken() ? this.logoutLink() : this.loginLink()}
                 
             </nav>
