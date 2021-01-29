@@ -33,7 +33,7 @@ class RecipePage extends Component {
             })
             .then(() => {
                 this.context.deleteRecipe(id)
-                this.props.history.push('/recipes')
+                this.props.history.goBack()
             })
             .catch(error => {
                 console.error({error})
@@ -44,10 +44,8 @@ class RecipePage extends Component {
         const recipeId = parseInt(this.props.match.params.id)
         const {recipes} = this.context
         const getRecipe = (recipes, recipeId) =>
-            recipes.find(recipe => recipe.id == recipeId)
+            recipes.find(recipe => recipe.id === recipeId)
         const recipeForPage = getRecipe(recipes, recipeId)
-        const currentUserId = TokenService.getUserIdFromToken()
-        const recipeUserId = recipeForPage.user_id
 
 
         return (
@@ -59,14 +57,10 @@ class RecipePage extends Component {
                     <p>Notes: {recipeForPage ? recipeForPage.notes : null}</p>
                 </div>
                 <div className='buttons'>
-                    {currentUserId === recipeUserId 
-                        ? <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
-                        : null
-                    }
-                    {currentUserId === recipeUserId
-                        ? <button onClick={this.handleClickDelete}>Delete</button>
-                        : null
-                    }
+                    <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
+            
+                     <button onClick={this.handleClickDelete}>Delete</button>
+                   
                     
                     <button onClick={this.props.history.goBack}>Back</button>
                 </div>

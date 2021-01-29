@@ -9,11 +9,17 @@ import './NavBar.css'
 
 class NavBar extends Component {
 
+    state = {
+        isLoggedIn: true
+    }
+
+
+
     static contextType = RecipenestContext
 
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
-        this.context.onLogoutSuccess()
+        this.setState({isLoggedIn: false})
     }
 
     logoutLink() {

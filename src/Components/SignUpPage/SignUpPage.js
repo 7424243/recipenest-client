@@ -98,7 +98,7 @@ class SignUpPage extends Component {
                             />
                         </section>
                         <section className='nickname'>
-                            <label htmlFor='nickname'>Nickname (option): </label>
+                            <label htmlFor='nickname'>Nickname (optional): </label>
                             <input 
                                 type='text' 
                                 placeholder='optional nickname' 
