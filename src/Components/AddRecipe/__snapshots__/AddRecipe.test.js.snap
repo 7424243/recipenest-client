@@ -46,24 +46,6 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
       />
     </section>
     <section
-      className="like"
-    >
-      <label
-        htmlFor="like"
-      >
-        Description: 
-      </label>
-      <textarea
-        aria-label="A brief description and/or keywords to describe the recipe "
-        cols="30"
-        name="like"
-        onChange={[Function]}
-        placeholder="A brief description and/or keywords to describe the recipe"
-        required={true}
-        rows="5"
-      />
-    </section>
-    <section
       className="notes"
     >
       <label
@@ -87,13 +69,13 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
       <label
         htmlFor="img-url"
       >
-        Image URL: 
+        Image URL: (or leave blank to use a default image)
       </label>
       <input
+        aria-label="add image url or leave blank to use a default image"
         name="img-url"
         onChange={[Function]}
         placeholder="https://www.recipe.com"
-        required={true}
         type="url"
       />
     </section>
@@ -101,7 +83,7 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
       className="buttons"
     >
       <a
-        href="/recipes"
+        href="/my-recipes"
         onClick={[Function]}
       >
         <button>

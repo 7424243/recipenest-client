@@ -17,6 +17,8 @@ function LandingPage() {
             <p className='demo-creds'>Password: Password0!</p>
             <p>To view a saved recipe, simply click on the recipe.</p> 
             <p>To add a new recipe, click on the '+' button near the bottom of the page.</p>
+            <br/>
+            <p>If you choose to sign up for an account, keep in mind that you need to add recipe notes in order to see anything on the My Recipes page!!</p>
             <div className='landing-page-button-container'>
                 <Link  to='/login'><button className='landing-page-button'>Get Started!</button></Link>
             </div>

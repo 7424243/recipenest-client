@@ -8,6 +8,7 @@ import TokenService from '../../services/token-service'
 import './AddRecipe.css'
 import config from '../../config'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
+import { Link } from 'react-router-dom'
 
 class AddRecipe extends Component {
 
@@ -120,7 +121,7 @@ class AddRecipe extends Component {
                             />
                         </section>
                         <section className='buttons'>
-                            <button onClick={this.props.history.goBack}>Cancel</button>
+                            <Link to='/my-recipes'><button>Cancel</button></Link>
                             <button type='submit'>Save</button>
                         </section>
                     </form>

@@ -11,13 +11,19 @@ describe('RecipePage Component', () => {
             params: {
                 id: 'Test_Recipe_Id'
             }
-        }
+        },
+        
+    }
+
+    function Something() {
+        const authToken = '$2a$12$j9T3FxsEtPdyZFcKO1w0KOMecz3dy5.I6qwZR0zLBJTJosvUJvYTu'
+        return authToken
     }
 
     //smoke test
     it('renders without crashing', () => {
         const div = document.createElement('div')
-        ReactDOM.render(<BrowserRouter><RecipePage {...props}/></BrowserRouter>, div)
+        ReactDOM.render(<BrowserRouter><RecipePage {...props}><Something/></RecipePage></BrowserRouter>, div)
         ReactDOM.unmountComponentAtNode(div)
     })
 

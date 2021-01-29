@@ -71,10 +71,8 @@ class RecipePage extends Component {
                     <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
                     
                     <button onClick={this.handleClickDelete}>Delete</button>
-                     
-                   
+                    <Link to='/my-recipes'><button>Back</button></Link>
                     
-                    <button onClick={this.props.history.goBack}>Back</button>
                 </div>
             </div> 
         )
