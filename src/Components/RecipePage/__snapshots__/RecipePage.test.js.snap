@@ -6,7 +6,7 @@ exports[`RecipePage Component renders the UI as expected 1`] = `
 >
   <div>
     <img
-      alt="word cloud from recipe description"
+      alt="visual of current recipe"
       className="recipe-page-img"
       src={null}
     />
@@ -21,10 +21,7 @@ exports[`RecipePage Component renders the UI as expected 1`] = `
       </h5>
     </a>
     <p>
-      Description: 
-    </p>
-    <p>
-      Additional Notes: 
+      Notes: 
     </p>
   </div>
   <div
@@ -38,11 +35,13 @@ exports[`RecipePage Component renders the UI as expected 1`] = `
         Edit
       </button>
     </a>
-    <button>
+    <button
+      onClick={[Function]}
+    >
       Delete
     </button>
     <a
-      href="/recipes"
+      href="/my-recipes"
       onClick={[Function]}
     >
       <button>

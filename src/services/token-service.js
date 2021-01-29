@@ -18,6 +18,7 @@ const TokenService = {
     },
     getUserIdFromToken() {
         const authToken = TokenService.getAuthToken()
+        console.log('authToken', authToken)
         const bearerToken = authToken.slice(7, authToken.length)
         const base64URL = bearerToken.split('.')[1]
         let base64 = base64URL.replace('-', '+').replace('_', '/')

@@ -11,18 +11,8 @@ import TokenService from '../../services/token-service'
 
 class RecipePage extends Component {
 
-    state = {
-        user_id: ''
-    }
-
     //allow access to context
     static contextType = RecipenestContext
-
-    componentDidMount() {
-        const user_id = TokenService.getUserIdFromToken()
-        console.log(user_id)
-        this.setState({user_id})
-    }
 
     handleClickDelete = e => {
         e.preventDefault()

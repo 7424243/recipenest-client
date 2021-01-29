@@ -2,6 +2,8 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
 import renderer from 'react-test-renderer'
 import RecipePage from './RecipePage'
+import jwt from 'jsonwebtoken'
+
 
 describe('RecipePage Component', () => {
 
@@ -15,15 +17,11 @@ describe('RecipePage Component', () => {
         
     }
 
-    function Something() {
-        const authToken = '$2a$12$j9T3FxsEtPdyZFcKO1w0KOMecz3dy5.I6qwZR0zLBJTJosvUJvYTu'
-        return authToken
-    }
-
+    
     //smoke test
     it('renders without crashing', () => {
         const div = document.createElement('div')
-        ReactDOM.render(<BrowserRouter><RecipePage {...props}><Something/></RecipePage></BrowserRouter>, div)
+        ReactDOM.render(<BrowserRouter><RecipePage {...props}> </RecipePage></BrowserRouter>, div)
         ReactDOM.unmountComponentAtNode(div)
     })
 
