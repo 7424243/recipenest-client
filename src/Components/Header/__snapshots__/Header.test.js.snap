@@ -5,7 +5,7 @@ exports[`Header Component renders the UI as expected 1`] = `
   className="header-container"
 >
   <a
-    href="/recipes"
+    href="/"
     onClick={[Function]}
   >
     <h1>
@@ -13,13 +13,6 @@ exports[`Header Component renders the UI as expected 1`] = `
     </h1>
   </a>
   <nav>
-    <a
-      className="nav-link"
-      href="/recipes"
-      onClick={[Function]}
-    >
-      All Recipes |
-    </a>
     <a
       className="nav-link"
       href="/login"

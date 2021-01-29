@@ -8,7 +8,7 @@ exports[`App Component renders the UI as expected 1`] = `
     className="header-container"
   >
     <a
-      href="/recipes"
+      href="/"
       onClick={[Function]}
     >
       <h1>
@@ -16,13 +16,6 @@ exports[`App Component renders the UI as expected 1`] = `
       </h1>
     </a>
     <nav>
-      <a
-        className="nav-link"
-        href="/recipes"
-        onClick={[Function]}
-      >
-        All Recipes |
-      </a>
       <a
         className="nav-link"
         href="/login"
@@ -37,10 +30,10 @@ exports[`App Component renders the UI as expected 1`] = `
       className="landing-page-container"
     >
       <p>
-        RecipeNest is a platform created to help keep track of virtual recipes.
+        RecipeNest is a platform created to help keep track of notes for virtual recipes.
       </p>
       <p>
-        It allows you to...
+        Once you are logged in, the app allows you to...
       </p>
       <ul
         className="landing-page-list"
@@ -48,28 +41,38 @@ exports[`App Component renders the UI as expected 1`] = `
         <li
           className="landing-page-li"
         >
-          Save links and notes for recipes.
+          Access your own saved recipe notes.
         </li>
         <li
           className="landing-page-li"
         >
-          Get all previously saved recipes.
+          Edit, delete, and add your own recipe notes.
         </li>
       </ul>
       <p>
-        Initially, you are shown a list of previously saved recipe names.
+        Initially, you will be prompted to login - feel free to Sign Up to create your own account or use the demo credientials below. 
+      </p>
+      <p
+        className="demo-creds"
+      >
+        Username: demo
+      </p>
+      <p
+        className="demo-creds"
+      >
+        Password: Password0!
       </p>
       <p>
-        To view a saved recipe, click on the recipe name. 
+        To view a saved recipe, simply click on the recipe.
       </p>
       <p>
-        To add a new recipe, click on 'Add Recipe' and you will be prompted to provide some details such as the name of the recipe, the link, and any additional notes you want.
+        To add a new recipe, click on the '+' button near the bottom of the page.
       </p>
       <div
         className="landing-page-button-container"
       >
         <a
-          href="/recipes"
+          href="/login"
           onClick={[Function]}
         >
           <button

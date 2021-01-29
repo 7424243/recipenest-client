@@ -13,8 +13,8 @@ function LandingPage() {
                 <li className='landing-page-li'>Edit, delete, and add your own recipe notes.</li>
             </ul>
             <p>Initially, you will be prompted to login - feel free to Sign Up to create your own account or use the demo credientials below. </p>
-            <p>Username: demo</p>
-            <p>Password: Password0!</p>
+            <p className='demo-creds'>Username: demo</p>
+            <p className='demo-creds'>Password: Password0!</p>
             <p>To view a saved recipe, simply click on the recipe.</p> 
             <p>To add a new recipe, click on the '+' button near the bottom of the page.</p>
             <div className='landing-page-button-container'>

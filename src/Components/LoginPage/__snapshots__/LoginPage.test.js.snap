@@ -7,6 +7,7 @@ Array [
   </h3>,
   <form
     className="login-form"
+    onSubmit={[Function]}
   >
     <section
       className="username"
@@ -17,7 +18,9 @@ Array [
         Username: 
       </label>
       <input
+        onChange={[Function]}
         placeholder="username"
+        required={true}
         type="text"
       />
     </section>
@@ -30,15 +33,17 @@ Array [
         Password: 
       </label>
       <input
+        onChange={[Function]}
         placeholder="password"
-        type="text"
+        required={true}
+        type="password"
       />
     </section>
     <section
       className="buttons"
     >
       <a
-        href="/recipes"
+        href="/"
         onClick={[Function]}
       >
         <button>
@@ -53,7 +58,9 @@ Array [
           Sign Up
         </button>
       </a>
-      <button>
+      <button
+        type="submit"
+      >
         Submit
       </button>
     </section>

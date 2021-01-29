@@ -62,7 +62,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
       <label
         htmlFor="nickname"
       >
-        Nickname (option): 
+        Nickname (optional): 
       </label>
       <input
         onChange={[Function]}
@@ -74,7 +74,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
       className="buttons"
     >
       <a
-        href="/recipes"
+        href="/"
         onClick={[Function]}
       >
         <button>

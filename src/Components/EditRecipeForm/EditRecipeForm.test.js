@@ -4,7 +4,7 @@ import {BrowserRouter} from 'react-router-dom'
 import renderer from 'react-test-renderer'
 import EditRecipeForm from './EditRecipeForm'
 
-describe('EditRecipeForm Component', () => {
+describe.only('EditRecipeForm Component', () => {
 
     //smoke test
     it('renders without crashing', () => {

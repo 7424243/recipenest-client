@@ -80,7 +80,7 @@ class LoginPage extends Component {
                     <section className='password'>
                         <label htmlFor='password'>Password: </label>
                         <input 
-                            type='text' 
+                            type='password' 
                             placeholder='password' 
                             required
                             onChange={this.handlePassword}

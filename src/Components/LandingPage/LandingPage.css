@@ -1,5 +1,9 @@
 /* Classes */
 
+.demo-creds {
+    font-family: 'Noto Serif', serif;
+}
+
 .landing-page-button {
     margin-top: 20px;
     padding: 1%;
