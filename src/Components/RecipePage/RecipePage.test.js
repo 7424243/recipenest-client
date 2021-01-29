@@ -21,7 +21,7 @@ describe('RecipePage Component', () => {
     //smoke test
     it('renders without crashing', () => {
         const div = document.createElement('div')
-        ReactDOM.render(<BrowserRouter><RecipePage {...props}> </RecipePage></BrowserRouter>, div)
+        ReactDOM.render(<BrowserRouter><RecipePage {...props}/></BrowserRouter>, div)
         ReactDOM.unmountComponentAtNode(div)
     })
 

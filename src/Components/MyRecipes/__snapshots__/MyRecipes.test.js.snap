@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyRecipes Component renders the UI as expected 1`] = `
+Array [
+  <h3>
+    My Recipes
+  </h3>,
+  <ul
+    className="my-recipes-list"
+  />,
+  <div
+    className="container"
+  >
+    <a
+      href="/addRecipe"
+      onClick={[Function]}
+    >
+      <button
+        className="add-button"
+      >
+        +
+      </button>
+    </a>
+  </div>,
+]
+`;
