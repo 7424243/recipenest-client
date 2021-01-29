@@ -3,7 +3,6 @@ import {Route, Switch} from 'react-router-dom'
 import LandingPage from './Components/LandingPage/LandingPage'
 import './App.css';
 import RecipenestContext from './RecipenestContext';
-import RecipeList from './Components/RecipeList/RecipeList';
 import Header from './Components/Header/Header';
 import RecipePage from './Components/RecipePage/RecipePage';
 import AddRecipe from './Components/AddRecipe/AddRecipe';
