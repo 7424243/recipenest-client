@@ -7,7 +7,6 @@ const RecipenestContext = React.createContext({
     addRecipe: () => {},
     updateRecipe: () => {},
     onLoginSuccess: () => {},
-    onLogoutSuccess: () => {},
     onSignUpSuccess: () => {}
 })
 

@@ -11,8 +11,18 @@ import TokenService from '../../services/token-service'
 
 class RecipePage extends Component {
 
+    state = {
+        user_id: ''
+    }
+
     //allow access to context
     static contextType = RecipenestContext
+
+    componentDidMount() {
+        const user_id = TokenService.getUserIdFromToken()
+        console.log(user_id)
+        this.setState({user_id})
+    }
 
     handleClickDelete = e => {
         e.preventDefault()
@@ -40,6 +50,7 @@ class RecipePage extends Component {
             })
     }
 
+
     render() {
         const recipeId = parseInt(this.props.match.params.id)
         const {recipes} = this.context
@@ -57,9 +68,10 @@ class RecipePage extends Component {
                     <p>Notes: {recipeForPage ? recipeForPage.notes : null}</p>
                 </div>
                 <div className='buttons'>
-                    <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
-            
-                     <button onClick={this.handleClickDelete}>Delete</button>
+                    {this.state.user_id === recipeForPage.user_id ? <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link> : null}
+                    
+                    {this.state.user_id === recipeForPage.user_id  ? <button onClick={this.handleClickDelete}>Delete</button> : null}
+                     
                    
                     
                     <button onClick={this.props.history.goBack}>Back</button>

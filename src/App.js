@@ -73,12 +73,6 @@ onLoginSuccess = () => {
   this.setState({loginStatus: true})
 }
 
-//updates state's logoutStatus
-onLogoutSuccess = () => {
-  this.setState({loginStatus: false})
-  console.log(this.state)
-}
-
 //updates state's signUpStatus
 onSignUpSuccess = () => {
   this.setState({signUpStatus: true})
@@ -92,7 +86,6 @@ onSignUpSuccess = () => {
       addRecipe: this.handleAddRecipe,
       updateRecipe: this.handleUpdateRecipe,
       onLoginSuccess: this.onLoginSuccess,
-      onLogoutSuccess: this.onLogoutSuccess,
       onSignUpSuccess: this.onSignUpSuccess,
     }
 
