@@ -105,7 +105,7 @@ class SignUpPage extends Component {
                                 onChange={this.handleAddNickname}/>
                         </section>
                         <section className='buttons'>
-                            <Link to='/recipes'><button>Cancel</button></Link>
+                            <Link to='/'><button>Cancel</button></Link>
                             <button type='submit'>Submit</button>
                         </section>
                     </form>

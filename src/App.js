@@ -103,10 +103,10 @@ onSignUpSuccess = () => {
                   path={'/'}
                   component={LandingPage}
                 />
-                <Route 
+                {/* <Route 
                   path={'/recipes'}
                   component={RecipeList}
-                />
+                /> */}
                 <Route 
                   path={'/recipe/:id'}
                   component={RecipePage}

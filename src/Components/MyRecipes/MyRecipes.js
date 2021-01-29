@@ -55,7 +55,8 @@ class MyRecipes extends Component {
         return (
             <>
                 <h3>My Recipes</h3>
-                <ul className='my-recipes-list'>{recipeList}</ul>
+                
+                <ul className='my-recipes-list'>{  recipeList }</ul>
                 <div className='container'>
                 {TokenService.hasAuthToken() 
                     ? <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>

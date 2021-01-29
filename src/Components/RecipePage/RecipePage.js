@@ -68,9 +68,9 @@ class RecipePage extends Component {
                     <p>Notes: {recipeForPage ? recipeForPage.notes : null}</p>
                 </div>
                 <div className='buttons'>
-                    {this.state.user_id === recipeForPage.user_id ? <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link> : null}
+                    <Link to={`/edit/${this.props.match.params.id}`}><button>Edit</button></Link>
                     
-                    {this.state.user_id === recipeForPage.user_id  ? <button onClick={this.handleClickDelete}>Delete</button> : null}
+                    <button onClick={this.handleClickDelete}>Delete</button>
                      
                    
                     

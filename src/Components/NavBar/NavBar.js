@@ -9,9 +9,15 @@ import './NavBar.css'
 
 class NavBar extends Component {
 
-    state = {
-        isLoggedIn: true
+    constructor(props) {
+        super(props)
+        this.state = {
+            isLoggedIn: true
+        }
     }
+    // state = {
+    //     isLoggedIn: true
+    // }
 
 
 
@@ -24,7 +30,7 @@ class NavBar extends Component {
 
     logoutLink() {
         return (
-            <Link to='/recipes' className='nav-link' onClick={this.handleLogoutClick}> Logout </Link>
+            <Link to='/' className='nav-link' onClick={this.handleLogoutClick}> Logout </Link>
         )
     }
 
@@ -38,7 +44,7 @@ class NavBar extends Component {
     render() {
         return (
             <nav>
-                <Link to='/recipes' className='nav-link'>All Recipes |</Link>
+                {/* <Link to='/recipes' className='nav-link'>All Recipes |</Link> */}
                 {TokenService.hasAuthToken() ? <Link to='/my-recipes' className='nav-link'> My Recipes |</Link> : null}
                 
                 {TokenService.hasAuthToken() ? this.logoutLink() : this.loginLink()}

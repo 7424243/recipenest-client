@@ -1,3 +1,4 @@
+
 //To-Do:
 //Add PropTypes
 //Add Error Message(s)
@@ -42,7 +43,7 @@ class LoginPage extends Component {
                 TokenService.saveAuthToken(res.authToken)
                 this.context.onLoginSuccess()
                 
-                this.props.history.push('/recipes')
+                this.props.history.push('/my-recipes')
                 
             })
             .catch(err => {
@@ -86,7 +87,7 @@ class LoginPage extends Component {
                         />
                     </section>
                     <section className='buttons'>
-                        <Link to='/recipes'><button>Cancel</button></Link>
+                        <Link to='/'><button>Cancel</button></Link>
                         <Link to='/signup'><button>Sign Up</button></Link>
                         <button type='submit'>Submit</button>
                     </section>
