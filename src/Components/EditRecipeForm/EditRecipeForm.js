@@ -160,7 +160,7 @@ class EditRecipeForm extends Component {
                             onChange={this.handleChangeImgUrl}/>
                     </section>
                     <section className='buttons'>
-                        <Link to='/recipes'><button>Cancel</button></Link>
+                        <Link to='/my-recipes'><button>Cancel</button></Link>
                         <button type='submit'>Save</button>
                     </section>
                 </form>
