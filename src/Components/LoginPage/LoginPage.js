@@ -13,6 +13,7 @@ class LoginPage extends Component {
         this.state = {
             user_name: '',
             password: '',
+            error: null
         }
     }
 
@@ -43,6 +44,7 @@ class LoginPage extends Component {
                 
             })
             .catch(err => {
+                this.setState({error: err.error})
                 console.error({err})
             })
     }
@@ -87,6 +89,7 @@ class LoginPage extends Component {
                         <Link to='/signup'><button>Sign Up</button></Link>
                         <button type='submit'>Submit</button>
                     </section>
+                    {this.state.error && <p>{this.state.error}. Please try logging in again, or sign up for an account.</p>}
                 </form>
             </>
         )

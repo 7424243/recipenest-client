@@ -12,12 +12,17 @@ import PropTypes from 'prop-types'
 
 class SignUpPage extends Component {
 
-    state = {
-        full_name: '',
-        user_name: '',
-        password: '',
-        nickname: '',
+    constructor(props) {
+        super(props)
+        this.state = {
+            full_name: '',
+            user_name: '',
+            password: '',
+            nickname: '',
+            error: null
+        }
     }
+
 
     static contextType = RecipenestContext
 
@@ -41,6 +46,7 @@ class SignUpPage extends Component {
                 this.props.history.push('/login')
             })
             .catch(err => {
+                this.setState({error: err.error})
                 console.error({err})
             })
     }
@@ -67,49 +73,53 @@ class SignUpPage extends Component {
             <div className='sign-up-container'>
                 <h3>Sign Up!</h3>
                 <ErrorBoundary>
-                    <form 
-                        className='sign-up-form'
-                        onSubmit={this.handleSubmit}
-                    >
-                        <section className='fullname'>
-                            <label htmlFor='fullname'>Full Name: </label>
-                            <input 
-                                type='text' 
-                                placeholder='Full Name'
-                                required 
-                                onChange={this.handleAddFullname}
-                            />
-                        </section>
-                        <section className='url'>
-                            <label htmlFor='username'>Username: </label>
-                            <input 
-                                type='text' 
-                                placeholder='username' 
-                                required
-                                onChange={this.handleAddUsername}
-                            />
-                        </section>
-                        <section className='password'>
-                            <label htmlFor='password'>Password: </label>
-                            <input 
-                                type='password' 
-                                placeholder='password' 
-                                required
-                                onChange={this.handleAddPassword}
-                            />
-                        </section>
-                        <section className='nickname'>
-                            <label htmlFor='nickname'>Nickname (optional): </label>
-                            <input 
-                                type='text' 
-                                placeholder='optional nickname' 
-                                onChange={this.handleAddNickname}/>
-                        </section>
-                        <section className='buttons'>
-                            <Link to='/'><button>Cancel</button></Link>
-                            <button type='submit'>Submit</button>
-                        </section>
-                    </form>
+                        <form 
+                            className='sign-up-form'
+                            onSubmit={this.handleSubmit}
+                        >
+                            <p className='required-field'>* required field</p>
+                            <section className='fullname'>
+                                <label htmlFor='fullname'>Full Name: * </label>
+                                <input 
+                                    type='text' 
+                                    placeholder='Full Name'
+                                    required 
+                                    onChange={this.handleAddFullname}
+                                />
+                            </section>
+                            <section className='url'>
+                                <label htmlFor='username'>Username: * </label>
+                                <input 
+                                    type='text' 
+                                    placeholder='username' 
+                                    required
+                                    onChange={this.handleAddUsername}
+                                />
+                                
+                            </section>
+                            <section className='password'>
+                                <label htmlFor='password'>Password: * </label>
+                                <p>Must be at least 8 characters long and contain at least 1 upper case, 1 lower case, 1 number, and 1 special character.</p>
+                                <input 
+                                    type='password' 
+                                    placeholder='password' 
+                                    required
+                                    onChange={this.handleAddPassword}
+                                />
+                            </section>
+                            <section className='nickname'>
+                                <label htmlFor='nickname'>Nickname (optional): </label>
+                                <input 
+                                    type='text' 
+                                    placeholder='optional nickname' 
+                                    onChange={this.handleAddNickname}/>
+                            </section>
+                            <section className='buttons'>
+                                <Link to='/'><button>Cancel</button></Link>
+                                <button type='submit'>Submit</button>
+                            </section>
+                            {this.state.error && <p>{this.state.error.message}. Please try again.</p>}
+                        </form>
                 </ErrorBoundary>
                 
             </div>

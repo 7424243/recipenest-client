@@ -11,13 +11,18 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
     className="sign-up-form"
     onSubmit={[Function]}
   >
+    <p
+      className="required-field"
+    >
+      * required field
+    </p>
     <section
       className="fullname"
     >
       <label
         htmlFor="fullname"
       >
-        Full Name: 
+        Full Name: * 
       </label>
       <input
         onChange={[Function]}
@@ -32,7 +37,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
       <label
         htmlFor="username"
       >
-        Username: 
+        Username: * 
       </label>
       <input
         onChange={[Function]}
@@ -47,8 +52,11 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
       <label
         htmlFor="password"
       >
-        Password: 
+        Password: * 
       </label>
+      <p>
+        Must be at least 8 characters long and contain at least 1 upper case, 1 lower case, 1 number, and 1 special character.
+      </p>
       <input
         onChange={[Function]}
         placeholder="password"

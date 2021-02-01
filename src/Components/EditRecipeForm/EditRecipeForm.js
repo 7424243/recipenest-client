@@ -56,6 +56,7 @@ class EditRecipeForm extends Component {
                 
             })
             .catch(error => {
+                this.setState({error})
                 console.error(error)
             })
 
@@ -79,19 +80,19 @@ class EditRecipeForm extends Component {
     validateRecipeName() {
         const name = this.state.recipe_name.trim()
         if(name.length === 0) {
-            return 'A recipe name is required'
+            return 'A recipe name is required in order to submit'
         }
     }
     validateUrl() {
         const url = this.state.url.trim()
         if(!isWebUri(url)) {
-            return 'A valid URL is required'
+            return 'A valid URL is required in order to submit'
         }
     }
     validateNotes() {
         const notes = this.state.notes.trim()
         if(notes.length === 0) {
-            return 'Notes are required'
+            return 'Notes are required in order to submit'
         }
     }
     validateImgUrl() {
@@ -126,6 +127,7 @@ class EditRecipeForm extends Component {
                 this.props.history.push('/my-recipes')
             })
             .catch(error => {
+                this.setState({error})
                 console.error({error})
             })
 
@@ -201,7 +203,7 @@ class EditRecipeForm extends Component {
                                 value={this.state.img_url} 
                                 onChange={this.handleChangeImgUrl}
                             />
-                            {this.state.url &&
+                            {this.state.img_url &&
                             <ValidationError message={this.validateImgUrl()}/>}
                         </section>
                         <section className='buttons'>
