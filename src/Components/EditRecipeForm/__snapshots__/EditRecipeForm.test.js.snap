@@ -11,13 +11,18 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
     className="edit-recipe-form"
     onSubmit={[Function]}
   >
+    <p
+      className="required-field"
+    >
+      * required field
+    </p>
     <section
       className="name"
     >
       <label
         htmlFor="name"
       >
-        Recipe Name: 
+        Recipe Name: * 
       </label>
       <input
         aria-label="recipe name: "
@@ -27,6 +32,7 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
         type="text"
         value=""
       />
+      
     </section>
     <section
       className="url"
@@ -34,7 +40,7 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
       <label
         htmlFor="url"
       >
-        Recipe URL: 
+        Recipe URL: * 
       </label>
       <input
         aria-label="recipe url: "
@@ -44,6 +50,7 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
         type="url"
         value=""
       />
+      
     </section>
     <section
       className="notes"
@@ -51,7 +58,7 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
       <label
         htmlFor="notes"
       >
-        Notes: 
+        Notes: * 
       </label>
       <textarea
         aria-label="notes: "
@@ -62,6 +69,7 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
         rows="5"
         value=""
       />
+      
     </section>
     <section
       className="url"
@@ -69,7 +77,7 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
       <label
         htmlFor="img-url"
       >
-        Recipe URL: 
+        Image URL: 
       </label>
       <input
         aria-label="recipe url: "
@@ -79,6 +87,7 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
         type="img-url"
         value=""
       />
+      
     </section>
     <section
       className="buttons"

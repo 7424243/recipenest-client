@@ -1,9 +1,8 @@
-//To-Do:
-//Add PropTypes
-
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class ErrorBoundary extends Component {
+    
     constructor(props) {
         super(props)
         this.state = {
@@ -25,3 +24,7 @@ class ErrorBoundary extends Component {
 }
 
 export default ErrorBoundary
+
+ErrorBoundary.propTypes = {
+    children: PropTypes.element.isRequired
+}

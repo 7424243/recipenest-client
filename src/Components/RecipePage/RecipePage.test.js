@@ -2,19 +2,19 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
 import renderer from 'react-test-renderer'
 import RecipePage from './RecipePage'
-import jwt from 'jsonwebtoken'
 
 
 describe('RecipePage Component', () => {
 
-    //testing props
     const props = {
         match: {
             params: {
                 id: 'Test_Recipe_Id'
             }
         },
-        
+        history: {
+            push: jest.fn()
+        }
     }
 
     

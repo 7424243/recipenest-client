@@ -6,18 +6,24 @@ import LoginPage from './LoginPage';
 
 
 describe('LoginPage Component', () => {
+
+  const props = {
+    history: {
+        push: jest.fn()
+    }
+  }
   
   //smoke test
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<BrowserRouter><LoginPage/></BrowserRouter>, div)
+    ReactDOM.render(<BrowserRouter><LoginPage {...props}/></BrowserRouter>, div)
     ReactDOM.unmountComponentAtNode(div)
   })
   
   //snapshot test
   it('renders the UI as expected', () => {
     const tree = renderer 
-      .create(<BrowserRouter><LoginPage/></BrowserRouter>)
+      .create(<BrowserRouter><LoginPage {...props}/></BrowserRouter>)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })

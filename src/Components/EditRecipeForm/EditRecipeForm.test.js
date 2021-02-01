@@ -6,23 +6,28 @@ import EditRecipeForm from './EditRecipeForm'
 
 describe('EditRecipeForm Component', () => {
 
-    const match = {
+    const props = {
+        match: {
             params: {
-                id: '123'
+                id: 'id'
             }
+        },
+        history: {
+            push: jest.fn()
+        }
     }
 
     //smoke test
     it('renders without crashing', () => {
         const div = document.createElement('div')
-        ReactDOM.render(<BrowserRouter><EditRecipeForm match={match}/></BrowserRouter>, div)
+        ReactDOM.render(<BrowserRouter><EditRecipeForm {...props}/></BrowserRouter>, div)
         ReactDOM.unmountComponentAtNode(div)
     })
 
     //snapshot test
     it('renders the UI as expected', () => {
         const tree = renderer
-            .create(<BrowserRouter><EditRecipeForm match={match}/></BrowserRouter>)
+            .create(<BrowserRouter><EditRecipeForm {...props}/></BrowserRouter>)
             .toJSON()
         expect(tree).toMatchSnapshot()
     })

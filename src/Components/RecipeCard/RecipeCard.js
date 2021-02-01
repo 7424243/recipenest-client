@@ -1,11 +1,11 @@
 //To-Do:
-//Add PropTypes
 //Add Error Message(s)
 
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
 import './RecipeCard.css'
+import PropTypes from 'prop-types'
 
 class RecipeCard extends Component {
 
@@ -27,3 +27,9 @@ class RecipeCard extends Component {
 }
 
 export default RecipeCard
+
+RecipeCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    img_url: PropTypes.string.isRequired,
+}

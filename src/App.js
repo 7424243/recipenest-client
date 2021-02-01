@@ -93,8 +93,9 @@ class App extends Component {
         </ErrorBoundary>
         <RecipenestContext.Provider value={contextValue}>
           <div>
-            <Switch>
-              <ErrorBoundary>
+            
+            <ErrorBoundary>
+              <Switch>
                 <Route
                   exact 
                   path={'/'}
@@ -124,8 +125,9 @@ class App extends Component {
                   path={'/login'}
                   component={LoginPage}
                 />
-              </ErrorBoundary>
-            </Switch>
+              </Switch>
+            </ErrorBoundary>
+            
           </div>
         </RecipenestContext.Provider>
         <footer></footer>

@@ -8,6 +8,7 @@ import RecipenestContext from '../../RecipenestContext'
 import './RecipePage.css'
 import config from '../../config'
 import TokenService from '../../services/token-service'
+import PropTypes from 'prop-types'
 
 class RecipePage extends Component {
 
@@ -70,4 +71,15 @@ class RecipePage extends Component {
 }
 
 export default RecipePage
+
+RecipePage.propTypes = {
+    history: PropTypes.shape({
+        goBack: PropTypes.func
+    }).isRequired,
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+            id: PropTypes.string
+        })
+    }).isRequired,
+}
 

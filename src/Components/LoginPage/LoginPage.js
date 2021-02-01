@@ -1,14 +1,10 @@
-
-//To-Do:
-//Add PropTypes
-//Add Error Message(s)
-
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import config from '../../config'
 import './LoginPage.css'
 import RecipenestContext from '../../RecipenestContext'
+import PropTypes from 'prop-types'
 
 class LoginPage extends Component {
 
@@ -98,3 +94,9 @@ class LoginPage extends Component {
 }
 
 export default LoginPage
+
+LoginPage.propTypes = {
+    history: PropTypes.shape({
+        push: PropTypes.func
+    }).isRequired
+}

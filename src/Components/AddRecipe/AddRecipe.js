@@ -59,6 +59,12 @@ class AddRecipe extends Component {
             return 'Notes are required'
         }
     }
+    validateImgUrl() {
+        const img_url = this.state.img_url.trim()
+        if(!isWebUri(img_url)) {
+            return 'Please provide a valid url for the image'
+        }
+    }
 
 
     //POST updated values
@@ -145,9 +151,11 @@ class AddRecipe extends Component {
                                 type='url' 
                                 name='img-url' 
                                 aria-label='add image url or leave blank to use a default image'
-                                placeholder='https://www.recipe.com' 
+                                placeholder='https://www.recipeimage.com' 
                                 onChange={this.addImgUrl}
                             />
+                            {this.state.url &&
+                            <ValidationError message={this.validateImgUrl()}/>}
                         </section>
                         <section className='buttons'>
                             <Link to='/my-recipes'><button className='cancel-button'>Cancel</button></Link>

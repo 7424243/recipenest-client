@@ -8,6 +8,7 @@ import config from '../../config'
 import RecipenestContext from '../../RecipenestContext'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import './SignUpPage.css'
+import PropTypes from 'prop-types'
 
 class SignUpPage extends Component {
 
@@ -117,3 +118,9 @@ class SignUpPage extends Component {
 }
 
 export default SignUpPage
+
+SignUpPage.propTypes = {
+    history: PropTypes.shape({
+        push: PropTypes.func
+    }).isRequired
+}

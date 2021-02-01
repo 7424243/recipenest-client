@@ -11,13 +11,18 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
     className="add-recipe-form"
     onSubmit={[Function]}
   >
+    <p
+      className="required-field"
+    >
+      * required field
+    </p>
     <section
       className="name"
     >
       <label
         htmlFor="name"
       >
-        Recipe Name: 
+        Recipe Name: * 
       </label>
       <input
         aria-label="recipe name"
@@ -27,6 +32,7 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         required={true}
         type="text"
       />
+      
     </section>
     <section
       className="url"
@@ -34,7 +40,7 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
       <label
         htmlFor="url"
       >
-        Recipe URL: 
+        Recipe URL: * 
       </label>
       <input
         aria-label="recipe url"
@@ -44,6 +50,7 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         required={true}
         type="url"
       />
+      
     </section>
     <section
       className="notes"
@@ -51,7 +58,7 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
       <label
         htmlFor="notes"
       >
-        Notes: 
+        Notes: * 
       </label>
       <textarea
         aria-label="Modifications for next time? Likes? Dislikes?"
@@ -62,6 +69,7 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         required={true}
         rows="5"
       />
+      
     </section>
     <section
       className="url"
@@ -75,9 +83,10 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         aria-label="add image url or leave blank to use a default image"
         name="img-url"
         onChange={[Function]}
-        placeholder="https://www.recipe.com"
+        placeholder="https://www.recipeimage.com"
         type="url"
       />
+      
     </section>
     <section
       className="buttons"
@@ -86,11 +95,14 @@ exports[`AddRecipe Component renders the UI as expected 1`] = `
         href="/my-recipes"
         onClick={[Function]}
       >
-        <button>
+        <button
+          className="cancel-button"
+        >
           Cancel
         </button>
       </a>
       <button
+        className="save-button"
         type="submit"
       >
         Save
