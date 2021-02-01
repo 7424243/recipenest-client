@@ -15,11 +15,10 @@ import MyRecipes from './Components/MyRecipes/MyRecipes'
 
 class App extends Component {
 
-  //set initial component state
   state = {
     recipes: [],
     loginStatus: false,
-    signUpStatus: false
+    signUpStatus: false,
   }
 
   //get all recipes when component mounts
@@ -48,7 +47,7 @@ class App extends Component {
     })
   }
 
-  //updates state to include newly create recipe
+  //updates state to include newly created recipe
   handleAddRecipe = recipe => {
     this.setState({
       recipes: [...this.state.recipes, recipe]
@@ -56,26 +55,25 @@ class App extends Component {
   }
 
   //updates state to include edited recipe
-handleUpdateRecipe = (updatedRecipe) => {
-  const recipeIndex = this.state.recipes.findIndex(recipe => 
-    (recipe.id === updatedRecipe.id))
-  const clonedRecipes = [...this.state.recipes]
-  clonedRecipes[recipeIndex] = updatedRecipe
-  this.setState({
-    recipes: clonedRecipes
-  })
+  handleUpdateRecipe = (updatedRecipe) => {
+    const recipeIndex = this.state.recipes.findIndex(recipe => 
+      (recipe.id === updatedRecipe.id))
+    const clonedRecipes = [...this.state.recipes]
+    clonedRecipes[recipeIndex] = updatedRecipe
+    this.setState({
+      recipes: clonedRecipes
+    })
+  }
 
-}
+  //udpates state's loginStatus
+  onLoginSuccess = () => {
+    this.setState({loginStatus: true})
+  }
 
-//udpates state's loginStatus
-onLoginSuccess = () => {
-  this.setState({loginStatus: true})
-}
-
-//updates state's signUpStatus
-onSignUpSuccess = () => {
-  this.setState({signUpStatus: true})
-}
+  //updates state's signUpStatus
+  onSignUpSuccess = () => {
+    this.setState({signUpStatus: true})
+  }
 
   render () {
 
@@ -102,10 +100,6 @@ onSignUpSuccess = () => {
                   path={'/'}
                   component={LandingPage}
                 />
-                {/* <Route 
-                  path={'/recipes'}
-                  component={RecipeList}
-                /> */}
                 <Route 
                   path={'/recipe/:id'}
                   component={RecipePage}
@@ -139,7 +133,5 @@ onSignUpSuccess = () => {
     )
   }
 }
-
-
 
 export default App

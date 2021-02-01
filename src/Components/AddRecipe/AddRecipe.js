@@ -12,11 +12,14 @@ import { Link } from 'react-router-dom'
 
 class AddRecipe extends Component {
 
-    state = {
-        recipe_name: '',
-        url: '',
-        notes: '',
-        img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
+    constructor(props) {
+        super(props)
+        this.state = {
+            recipe_name: '',
+            url: '',
+            notes: '',
+            img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
+        }
     }
 
 
@@ -43,7 +46,7 @@ class AddRecipe extends Component {
         e.preventDefault()
         let payload = Object.assign({}, this.state)
         payload.user_id = TokenService.getUserIdFromToken()
-        fetch(`${config.API_ENDPOINT}/recipes/`, {
+        fetch(`${config.API_ENDPOINT} /`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
