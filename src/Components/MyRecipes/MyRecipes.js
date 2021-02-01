@@ -44,7 +44,7 @@ class MyRecipes extends Component {
 
     render() {
         const {recipes} = this.state
-        const recipeList = recipes.map(recipe => 
+        const recipeList = recipes.length === 0 ? <p>It looks like you haven't saved any recipe notes yet! Please enter a recipe note by clicking on the '+' button to get started!</p> : recipes.map(recipe => 
             <li key={recipe.id}>
                 <RecipeCard 
                     id={recipe.id}
