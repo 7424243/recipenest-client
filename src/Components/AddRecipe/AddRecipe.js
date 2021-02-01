@@ -1,7 +1,3 @@
-//To-Do:
-//Add PropTypes
-//Add Error Message(s)
-
 import React, {Component} from 'react'
 import RecipenestContext from '../../RecipenestContext'
 import TokenService from '../../services/token-service'
@@ -9,6 +5,9 @@ import './AddRecipe.css'
 import config from '../../config'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import {isWebUri} from 'valid-url'
+import ValidationError from '../ValidationError/ValidationError.js'
 
 class AddRecipe extends Component {
 
@@ -21,6 +20,7 @@ class AddRecipe extends Component {
             img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
         }
     }
+
 
 
     //allow access to context
@@ -40,13 +40,33 @@ class AddRecipe extends Component {
         this.setState({img_url: e.target.value})
     }
 
+    //validation functions for user inputs
+    validateRecipeName() {
+        const name = this.state.recipe_name.trim()
+        if(name.length === 0) {
+            return 'A recipe name is required'
+        }
+    }
+    validateUrl() {
+        const url = this.state.url.trim()
+        if(!isWebUri(url)) {
+            return 'A valid URL is required'
+        }
+    }
+    validateNotes() {
+        const notes = this.state.notes.trim()
+        if(notes.length === 0) {
+            return 'Notes are required'
+        }
+    }
+
 
     //POST updated values
     handleSubmit = e => {
         e.preventDefault()
         let payload = Object.assign({}, this.state)
         payload.user_id = TokenService.getUserIdFromToken()
-        fetch(`${config.API_ENDPOINT} /`, {
+        fetch(`${config.API_ENDPOINT}/recipes/`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -78,8 +98,9 @@ class AddRecipe extends Component {
                         className='add-recipe-form' 
                         onSubmit={this.handleSubmit}
                     >
+                        <p className='required-field'>* required field</p>
                         <section className='name'>
-                            <label htmlFor='name'>Recipe Name: </label>
+                            <label htmlFor='name'>Recipe Name: * </label>
                             <input 
                                 type='text' 
                                 aria-label='recipe name'
@@ -88,9 +109,11 @@ class AddRecipe extends Component {
                                 required 
                                 onChange={this.addName}
                             />
+                            {this.state.recipe_name && 
+                            <ValidationError message={this.validateRecipeName()}/>}
                         </section>
                         <section className='url'>
-                            <label htmlFor='url'>Recipe URL: </label>
+                            <label htmlFor='url'>Recipe URL: * </label>
                             <input 
                                 type='url' 
                                 aria-label='recipe url'
@@ -99,10 +122,11 @@ class AddRecipe extends Component {
                                 required 
                                 onChange={this.addUrl}
                             />
-
+                            {this.state.url &&
+                            <ValidationError message={this.validateUrl()}/>}
                         </section>
                         <section className='notes'>
-                            <label htmlFor='notes'>Notes: </label>
+                            <label htmlFor='notes'>Notes: * </label>
                             <textarea 
                                 name='notes' 
                                 cols='30' 
@@ -112,6 +136,8 @@ class AddRecipe extends Component {
                                 required 
                                 onChange={this.addNotes} 
                             />
+                            {this.state.notes &&
+                            <ValidationError message={this.validateNotes()}/>}
                         </section>
                         <section className='url'>
                             <label htmlFor='img-url'>Image URL: (or leave blank to use a default image)</label>
@@ -124,8 +150,8 @@ class AddRecipe extends Component {
                             />
                         </section>
                         <section className='buttons'>
-                            <Link to='/my-recipes'><button>Cancel</button></Link>
-                            <button type='submit'>Save</button>
+                            <Link to='/my-recipes'><button className='cancel-button'>Cancel</button></Link>
+                            <button type='submit' className='save-button'>Save</button>
                         </section>
                     </form>
                 </ErrorBoundary>
@@ -136,3 +162,9 @@ class AddRecipe extends Component {
 }
 
 export default AddRecipe
+
+AddRecipe.propTypes = {
+    history: PropTypes.shape({
+        push: PropTypes.func
+    }).isRequired
+}
