@@ -9,15 +9,12 @@ import './SignUpPage.css'
 class SignUpPage extends Component {
 
     //set default state
-    constructor(props) {
-        super(props)
-        this.state = {
-            full_name: '',
-            user_name: '',
-            password: '',
-            nickname: '',
-            error: null
-        }
+    state = {
+        full_name: '',
+        user_name: '',
+        password: '',
+        nickname: '',
+        error: null
     }
 
     //allow access to context

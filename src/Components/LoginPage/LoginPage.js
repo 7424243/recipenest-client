@@ -9,13 +9,10 @@ import PropTypes from 'prop-types'
 class LoginPage extends Component {
 
     //set default state
-    constructor(props) {
-        super(props)
-        this.state = {
-            user_name: '',
-            password: '',
-            error: null
-        }
+    state = {
+        user_name: '',
+        password: '',
+        error: null
     }
 
     //allow access to context

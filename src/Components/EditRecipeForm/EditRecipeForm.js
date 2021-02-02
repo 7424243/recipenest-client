@@ -12,19 +12,16 @@ import './EditRecipeForm.css'
 class EditRecipeForm extends Component {
 
     //set default state 
-    constructor(props) {
-        super(props)
-        this.state = {
-            error: null,
-            id: '',
-            recipe_name: '',
-            url: '',
-            notes: '',
-            img_url: '',
-            date_created: '',
-            user_id: '',
-        }       
-    }
+    state = {
+        error: null,
+        id: '',
+        recipe_name: '',
+        url: '',
+        notes: '',
+        img_url: '',
+        date_created: '',
+        user_id: '',
+    }       
 
     //allow access to context
     static contextType = RecipenestContext

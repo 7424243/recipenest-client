@@ -12,16 +12,14 @@ import './AddRecipe.css'
 class AddRecipe extends Component {
 
     //set default state
-    constructor(props) {
-        super(props)
-        this.state = {
-            recipe_name: '',
-            url: '',
-            notes: '',
-            img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
-            error: null
-        }
+    state = {
+        recipe_name: '',
+        url: '',
+        notes: '',
+        img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
+        error: null
     }
+  
 
 
     //allow access to context
