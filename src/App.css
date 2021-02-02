@@ -62,10 +62,6 @@ label {
   outline: #D16D2C solid;
 }
 
-.cancel-button, .save-button {
-  display: block,
-}
-
 .required-field {
   margin-left: 0;
   font-family: 'Baskervville', serif;
