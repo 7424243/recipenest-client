@@ -12,7 +12,7 @@
     background-color: #5F7466;
     color: white;
     font-size: 16px;
-    padding: 10px 24px;
+    padding: 10px 15px;
     font-family: 'Baskervville', serif;
     border-radius: 8px;
     border: none;
@@ -63,9 +63,7 @@
         width: 20%;
         height: 20%;
     }
-}
 
-@media screen and (min-width: 490px) {
     .recipe-page-container {
         margin-left: 200px;
         margin-right: 200px;

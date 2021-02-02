@@ -48,7 +48,7 @@ label {
   background-color: #5F7466;
   color: white;
   font-size: 16px;
-  padding: 10px 24px;
+  padding: 10px 15px;
   font-family: 'Baskervville', serif;
   border-radius: 8px;
   border: none;
@@ -74,10 +74,11 @@ label {
 .save-button {
   margin-top: 10px;
   margin-left: 10px;
+  margin-right: 10px;
   background-color: #5F7466;
   color: white;
   font-size: 16px;
-  padding: 10px 24px;
+  padding: 10px 15px;
   font-family: 'Baskervville', serif;
   border-radius: 8px;
   border: none;
@@ -89,18 +90,6 @@ label {
 
 .save-button:focus {
   outline: #D16D2C solid;
-}
-
-/* @media */
-
-@media screen and (min-width: 790px) {
-  .cancel-button {
-    float: left;
-  }
-
-  .save-button {
-    float: right;
-  }
 }
 
 
