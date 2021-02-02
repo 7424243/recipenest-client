@@ -43,9 +43,21 @@ class MyRecipes extends Component {
     }
 
 
+
+
     render() {
         const {recipes} = this.state
-        const recipeList = recipes.length === 0 ? <p>It looks like you haven't saved any recipe notes yet! Please enter a recipe note by clicking on the '+' button to get started!</p> : recipes.map(recipe => 
+
+        const sortFunction = (a, b) => {
+            if(a.recipe_name.toLowerCase() < b.recipe_name.toLowerCase()) 
+                { return -1 }
+            if(a.recipe_name.toLowerCase() > b.recipe_name.toLowerCase()) 
+                { return 1 }
+            return 0;
+        }
+        const sortedRecipes = recipes.sort(sortFunction)
+
+        const recipeList = sortedRecipes.length === 0 ? <p>It looks like you haven't saved any recipe notes yet! Please enter a recipe note by clicking on the '+' button to get started!</p> : recipes.map(recipe => 
             <li key={recipe.id}>
                 <RecipeCard 
                     id={recipe.id}
