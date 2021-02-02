@@ -5,7 +5,7 @@
 }
 
 button:focus {
-  outline: 0;
+  outline: #D16D2C solid;
 }
 
 h3 {
@@ -58,6 +58,10 @@ label {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.cancel-button:focus {
+  outline: #D16D2C solid;
+}
+
 .cancel-button, .save-button {
   display: block,
 }
@@ -81,6 +85,10 @@ label {
 
 .save-button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.save-button:focus {
+  outline: #D16D2C solid;
 }
 
 /* @media */
