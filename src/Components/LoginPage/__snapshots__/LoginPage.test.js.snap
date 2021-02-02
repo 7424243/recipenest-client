@@ -46,7 +46,9 @@ Array [
         href="/"
         onClick={[Function]}
       >
-        <button>
+        <button
+          className="cancel-button"
+        >
           Cancel
         </button>
       </a>
@@ -54,11 +56,14 @@ Array [
         href="/signup"
         onClick={[Function]}
       >
-        <button>
+        <button
+          className="sign-up-button"
+        >
           Sign Up
         </button>
       </a>
       <button
+        className="save-button"
         type="submit"
       >
         Submit

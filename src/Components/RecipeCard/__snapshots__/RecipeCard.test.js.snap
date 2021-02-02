@@ -13,7 +13,9 @@ exports[`RecipeCard Component renders the UI as expected 1`] = `
       className="recipe-card-img"
       src="url"
     />
-    <h4>
+    <h4
+      className="recipe-card-name"
+    >
       name
     </h4>
   </div>

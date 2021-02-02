@@ -11,12 +11,16 @@ import './MyRecipes.css'
 
 class MyRecipes extends Component {
 
+    //set default state
     state = {
         recipes: [],
+        error: null
     }
 
+    //allow access to content
     static contextType = RecipenestContext
 
+    //get all of the user's recipes when the component mounts
     componentDidMount() {
         const user_id = TokenService.getUserIdFromToken()
         fetch(`${config.API_ENDPOINT}/recipes/users/${user_id}`, {
@@ -36,10 +40,10 @@ class MyRecipes extends Component {
                 this.setState({recipes})
             })
             .catch(error => {
+                this.setState({error})
                 console.error({error})
             })
     }
-
 
 
     render() {
@@ -61,12 +65,9 @@ class MyRecipes extends Component {
                      {recipeList}
                  </ul>
                 <div className='container'>
-                {TokenService.hasAuthToken() 
-                    ? <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
-                    : null
-                }
+                    <Link to={'/addRecipe'}><button className='add-button'>+</button></Link>
                 </div>
-        </>
+            </>
         )
     }
 }

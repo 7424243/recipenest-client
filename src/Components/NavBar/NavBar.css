@@ -5,6 +5,8 @@ nav {
     font-size: medium;
 }
 
+/* Classes */
+
 .nav-link:active {
     font-weight: 900;
 }

@@ -1,21 +1,35 @@
-h3 {
+/* Classes */
+
+.buttons {
+    margin: 50px;
+    font-family: 'Baskervville', serif;
+
+}
+
+.delete-button {
+    background-color: #5F7466;
+    color: white;
+    font-size: 16px;
+    padding: 10px 24px;
+    font-family: 'Baskervville', serif;
+    border-radius: 8px;
+    border: none;
+}
+
+.delete-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.recipe-name {
     padding-top: 20px;
     text-align: center;
     font-family: 'Baskervville', serif;
 }
 
-p {
+.recipe-notes {
     text-align: left;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-
-/* Classes */
-
-.buttons {
-    margin-top: 50px;
-    font-family: 'Baskervville', serif;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .recipe-page-container {
@@ -24,6 +38,8 @@ p {
     padding-bottom: 5%;
     font-family: 'Baskervville', serif;
     font-size: larger;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .recipe-page-img {

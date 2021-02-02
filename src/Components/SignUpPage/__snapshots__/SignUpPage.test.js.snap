@@ -54,7 +54,9 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
       >
         Password: * 
       </label>
-      <p>
+      <p
+        className="password-info"
+      >
         Must be at least 8 characters long and contain at least 1 upper case, 1 lower case, 1 number, and 1 special character.
       </p>
       <input
@@ -85,11 +87,14 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         href="/"
         onClick={[Function]}
       >
-        <button>
+        <button
+          className="cancel-button"
+        >
           Cancel
         </button>
       </a>
       <button
+        className="save-button"
         type="submit"
       >
         Submit

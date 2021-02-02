@@ -1,30 +1,17 @@
-h3 {
-    padding-top: 20px;
-    text-align: center;
-    font-family: 'Baskervville', serif;
-}
-
-input {
-    margin-bottom: 10px;
-}
-
-input, label {
-    display: block;
-    width: 100%;
-    font-family: 'Baskervville', serif;
-    font-size: large;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-
 /* Classes */
 
 .buttons {
     margin-top: 40px;
     text-align: center;
+}
+
+.password-info {
+    margin-top: 0;
+}
+
+.sign-up-error {
+    text-align: center;
+    color: #D16D2C;
 }
 
 .sign-up-form {

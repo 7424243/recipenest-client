@@ -1,19 +1,17 @@
-//To-Do:
-//Add Error Message(s)
-
 import React, {Component} from 'react'
 import RecipenestContext from '../../RecipenestContext'
 import {Link} from 'react-router-dom'
-import './EditRecipeForm.css'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import PropTypes from 'prop-types'
 import {isWebUri} from 'valid-url'
 import ValidationError from '../ValidationError/ValidationError.js'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
+import './EditRecipeForm.css'
 
 class EditRecipeForm extends Component {
 
+    //set default state 
     constructor(props) {
         super(props)
         this.state = {
@@ -28,11 +26,9 @@ class EditRecipeForm extends Component {
         }       
     }
 
-
     //allow access to context
     static contextType = RecipenestContext
 
-    
     //GET recipe's values
     componentDidMount() {
         const recipeId = this.props.match.params.id
@@ -130,9 +126,9 @@ class EditRecipeForm extends Component {
                 this.setState({error})
                 console.error({error})
             })
-
     }
 
+    //update state with any edited values
     resetFields = (newFields) => {
         this.setState({
             recipe_name: newFields.recipe_name || '',
@@ -207,12 +203,11 @@ class EditRecipeForm extends Component {
                             <ValidationError message={this.validateImgUrl()}/>}
                         </section>
                         <section className='buttons'>
-                            <Link to='/my-recipes'><button>Cancel</button></Link>
-                            <button type='submit'>Save</button>
+                            <Link to='/my-recipes'><button className='cancel-button'>Cancel</button></Link>
+                            <button type='submit' className='save-button'>Save</button>
                         </section>
                     </form>
                 </ErrorBoundary>
-                
             </div>
         )
     }

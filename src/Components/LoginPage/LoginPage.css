@@ -1,30 +1,8 @@
-h3 {
-    padding-top: 20px;
-    text-align: center;
-    font-family: 'Baskervville', serif;
-}
-
-input {
-    margin-bottom: 10px;
-}
-
-input, label {
-    display: block;
-    width: 100%;
-    font-family: 'Baskervville', serif;
-    font-size: large;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-
 /* Classes */
 
-.buttons {
-    margin-top: 40px;
+.login-error {
     text-align: center;
+    color: #D16D2C;
 }
 
 .login-form {
@@ -32,6 +10,20 @@ label {
     padding: 0 0 40px;
     max-width: 80%;
     text-align: left;
+}
+
+.sign-up-button {
+    background-color: #5F7466;
+    color: white;
+    font-size: 16px;
+    padding: 10px 24px;
+    font-family: 'Baskervville', serif;
+    border-radius: 8px;
+    border: none;
+}
+
+.sign-up-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 

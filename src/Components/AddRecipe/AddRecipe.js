@@ -1,16 +1,17 @@
 import React, {Component} from 'react'
 import RecipenestContext from '../../RecipenestContext'
 import TokenService from '../../services/token-service'
-import './AddRecipe.css'
 import config from '../../config'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {isWebUri} from 'valid-url'
 import ValidationError from '../ValidationError/ValidationError.js'
+import './AddRecipe.css'
 
 class AddRecipe extends Component {
 
+    //set default state
     constructor(props) {
         super(props)
         this.state = {
@@ -18,9 +19,9 @@ class AddRecipe extends Component {
             url: '',
             notes: '',
             img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
+            error: null
         }
     }
-
 
 
     //allow access to context
@@ -66,8 +67,7 @@ class AddRecipe extends Component {
         }
     }
 
-
-    //POST updated values
+    //POST new values
     handleSubmit = e => {
         e.preventDefault()
         let payload = Object.assign({}, this.state)
@@ -91,6 +91,7 @@ class AddRecipe extends Component {
                 this.props.history.push('/my-recipes')
             })
             .catch(error => {
+                this.setState({error})
                 console.error({error})
             })
     }
@@ -163,7 +164,6 @@ class AddRecipe extends Component {
                         </section>
                     </form>
                 </ErrorBoundary>
-                
             </div>
         )
     }

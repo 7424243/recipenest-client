@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 
 class LoginPage extends Component {
 
+    //set default state
     constructor(props) {
         super(props)
         this.state = {
@@ -17,8 +18,10 @@ class LoginPage extends Component {
         }
     }
 
+    //allow access to context
     static contextType = RecipenestContext
 
+    //Login with JWT authorization
     handleSubmitJwtAuth = e => {
         e.preventDefault()
         fetch(`${config.API_ENDPOINT}/auth/login`, {
@@ -35,11 +38,8 @@ class LoginPage extends Component {
                 return res.json()
             })
             .then(res => {
-                console.log(res)
-                
                 TokenService.saveAuthToken(res.authToken)
                 this.context.onLoginSuccess()
-                
                 this.props.history.push('/my-recipes')
                 
             })
@@ -49,10 +49,10 @@ class LoginPage extends Component {
             })
     }
 
+    //update state's values for username and password
     handleUsername = e => {
         this.setState({user_name: e.target.value})
     }
-
     handlePassword = e => {
         this.setState({password: e.target.value})
     }
@@ -85,11 +85,11 @@ class LoginPage extends Component {
                         />
                     </section>
                     <section className='buttons'>
-                        <Link to='/'><button>Cancel</button></Link>
-                        <Link to='/signup'><button>Sign Up</button></Link>
-                        <button type='submit'>Submit</button>
+                        <Link to='/'><button className='cancel-button'>Cancel</button></Link>
+                        <Link to='/signup'><button className='sign-up-button'>Sign Up</button></Link>
+                        <button type='submit' className='save-button'>Submit</button>
                     </section>
-                    {this.state.error && <p>{this.state.error}. Please try logging in again, or sign up for an account.</p>}
+                    {this.state.error && <p className='login-error'>{this.state.error}. Please try logging in again, or Sign Up for an account.</p>}
                 </form>
             </>
         )

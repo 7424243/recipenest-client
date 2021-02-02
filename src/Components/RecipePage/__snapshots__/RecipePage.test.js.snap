@@ -10,17 +10,23 @@ exports[`RecipePage Component renders the UI as expected 1`] = `
       className="recipe-page-img"
       src={null}
     />
-    <h3 />
+    <h3
+      className="recipe-name"
+    />
     <a
       href={null}
       rel="noreferrer"
       target="_blank"
     >
-      <h5>
+      <h5
+        className="clickable-link"
+      >
         Clickable Recipe Link
       </h5>
     </a>
-    <p>
+    <p
+      className="recipe-notes"
+    >
       Notes: 
     </p>
   </div>
@@ -28,24 +34,29 @@ exports[`RecipePage Component renders the UI as expected 1`] = `
     className="buttons"
   >
     <a
-      href="/edit/Test_Recipe_Id"
+      href="/my-recipes"
       onClick={[Function]}
     >
-      <button>
-        Edit
+      <button
+        className="cancel-button"
+      >
+        Back
       </button>
     </a>
     <button
+      className="delete-button"
       onClick={[Function]}
     >
       Delete
     </button>
     <a
-      href="/my-recipes"
+      href="/edit/Test_Recipe_Id"
       onClick={[Function]}
     >
-      <button>
-        Back
+      <button
+        className="save-button"
+      >
+        Edit
       </button>
     </a>
   </div>

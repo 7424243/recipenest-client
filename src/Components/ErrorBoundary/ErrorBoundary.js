@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 class ErrorBoundary extends Component {
     
+    //set default state
     constructor(props) {
         super(props)
         this.state = {

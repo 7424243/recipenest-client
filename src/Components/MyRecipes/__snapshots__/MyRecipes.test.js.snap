@@ -7,7 +7,11 @@ Array [
   </h3>,
   <ul
     className="my-recipes-list"
-  />,
+  >
+    <p>
+      It looks like you haven't saved any recipe notes yet! Please enter a recipe note by clicking on the '+' button to get started!
+    </p>
+  </ul>,
   <div
     className="container"
   >

@@ -96,11 +96,14 @@ exports[`EditRecipeForm Component renders the UI as expected 1`] = `
         href="/my-recipes"
         onClick={[Function]}
       >
-        <button>
+        <button
+          className="cancel-button"
+        >
           Cancel
         </button>
       </a>
       <button
+        className="save-button"
         type="submit"
       >
         Save
