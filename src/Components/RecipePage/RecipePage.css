@@ -3,7 +3,7 @@
 .buttons {
     margin: 50px;
     font-family: 'Baskervville', serif;
-
+    text-align: center;
 }
 
 .delete-button {
