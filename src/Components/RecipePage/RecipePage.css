@@ -7,6 +7,8 @@
 }
 
 .delete-button {
+    margin-top: 10px;
+    margin-left: 10px;
     background-color: #5F7466;
     color: white;
     font-size: 16px;
@@ -28,8 +30,8 @@
 
 .recipe-notes {
     text-align: left;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .recipe-page-container {
@@ -38,13 +40,34 @@
     padding-bottom: 5%;
     font-family: 'Baskervville', serif;
     font-size: larger;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .recipe-page-img {
     margin-top: 20px;
-    width: 20%;
-    height: 20%;
+    width: 100px;
+    height: 150px;
     background-color: lightgray;
+}
+
+/* @media */
+
+@media screen and (min-width: 775px) {
+    .recipe-notes {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    .recipe-page-img {
+        width: 20%;
+        height: 20%;
+    }
+}
+
+@media screen and (min-width: 490px) {
+    .recipe-page-container {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
 }
