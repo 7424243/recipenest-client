@@ -20,7 +20,6 @@ class RecipePage extends Component {
     handleClickDelete = e => {
         e.preventDefault()
         const id = parseInt(this.props.match.params.id)
-        console.log(id)
         fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
             method: 'DELETE', 
             headers: {
@@ -28,7 +27,6 @@ class RecipePage extends Component {
             }
         })
             .then(res => {
-                console.log(res)
                 if(!res.ok) {
                     return res.json().then(e => Promise.reject(e))
                 }
