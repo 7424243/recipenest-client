@@ -23,40 +23,6 @@ class SignUpPage extends Component {
     //POST a new user
     handleSubmit = e => {
         e.preventDefault()
-        // Promise.all([
-        //     fetch(`${config.API_ENDPOINT}/users`, {
-        //         method: 'POST',
-        //         headers: {
-        //             'content-type': 'application/json',
-        //         },
-        //         body: JSON.stringify(this.state)
-        //     }),
-        //     fetch(`${config.API_ENDPOINT}/auth/login`, {
-        //         method: 'POST',
-        //         headers: {
-        //             'content-type': 'application/json',
-        //         },
-        //         body: JSON.stringify(this.state)
-        //     })
-        // ])
-        //     .then(([usersResponse, loginResponse]) => {
-        //         if(!usersResponse.ok)
-        //             return usersResponse.json().then(error => Promise.reject(error))
-        //         if(!loginResponse.ok)
-        //             return loginResponse.json().then(error => Promise.reject(error))
-        //         return(Promise.all([usersResponse.json(), loginResponse.json()]))
-        //     })
-        //     .then(([user, login]) => {
-        //         console.log('login', login)
-        //         this.context.onSignUpSuccess()
-        //         TokenService.saveAuthToken(login.authToken)
-        //         this.context.onLoginSuccess()
-        //         this.props.history.push('/my-recipes')
-        //     })
-        //     .catch(err => {
-        //         this.setState({error: err.error})
-        //         console.error({err})
-        //     })
         fetch(`${config.API_ENDPOINT}/users`, {
             method: 'POST',
             headers: {
@@ -72,7 +38,6 @@ class SignUpPage extends Component {
             })
             .then(() => {
                 this.context.onSignUpSuccess()
-                this.props.history.push('/login')
             })
             .catch(err => {
                 this.setState({error: err.error})
@@ -109,6 +74,7 @@ class SignUpPage extends Component {
                             <input 
                                 type='text' 
                                 placeholder='Full Name'
+                                autoComplete='off'
                                 required 
                                 onChange={this.handleAddFullname}
                             />
@@ -118,6 +84,7 @@ class SignUpPage extends Component {
                             <input 
                                 type='text' 
                                 placeholder='username' 
+                                autoComplete='off'
                                 required
                                 onChange={this.handleAddUsername}
                             />
@@ -128,6 +95,7 @@ class SignUpPage extends Component {
                             <input 
                                 type='password' 
                                 placeholder='password' 
+                                autoComplete='off'
                                 required
                                 onChange={this.handleAddPassword}
                             />
@@ -137,6 +105,7 @@ class SignUpPage extends Component {
                             <input 
                                 type='text' 
                                 placeholder='optional nickname' 
+                                autoComplete='off'
                                 onChange={this.handleAddNickname}/>
                         </section>
                         <section className='buttons'>

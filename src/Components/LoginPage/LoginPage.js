@@ -68,6 +68,7 @@ class LoginPage extends Component {
                         <input 
                             type='text' 
                             placeholder='username' 
+                            autoComplete='on'
                             required
                             onChange={this.handleUsername}
                         />
@@ -77,6 +78,7 @@ class LoginPage extends Component {
                         <input 
                             type='password' 
                             placeholder='password' 
+                            autoComplete='on'
                             required
                             onChange={this.handlePassword}
                         />
