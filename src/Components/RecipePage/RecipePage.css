@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.clickable-link {
+    color: #5F7466;
+}
+
 .delete-button {
     margin-top: 10px;
     margin-left: 10px;
