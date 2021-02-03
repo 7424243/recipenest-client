@@ -21,7 +21,7 @@ exports[`RecipePage Component renders the UI as expected 1`] = `
       <h5
         className="clickable-link"
       >
-        Clickable Recipe Link
+        Clickable Recipe Link 🔗
       </h5>
     </a>
     <p
