@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# RecipeNest App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RecipeNest is a responsive web application allows users to keep track of their virtual recipe notes. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Click [here](https://recipenest.vercel.app/).
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Login Page:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![login page image](assets/screenshots/Login.png)
 
-### `npm test`
+### My Recipes Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![my recipes page](assets/screenshots/MyRecipes.png)
 
-### `npm run build`
+### Recipe Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![recipe page image](assets/screenshots/RecipePage.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### New Recipe Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![new recipe page](assets/screenshots/NewRecipe.png)
 
-### `npm run eject`
+## Summary
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This app allows users to easily keep track of their virtual recipe notes. The app requires authentication so a user has to sign up for an account or, if they would like to simply tour the app and get a feel for how it works, demo login credentials are provided in the Live Demo landing page. Once logged in, a user can see all of their previously saved recipe entries. They can add a new recipe by including the link to the virtual recipe, the recipe name, any notes, and an image url to be displayed on the My Recipes page. A user can also edit or delete previously saved recipes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* React
+* CSS
+* JavaScript
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Ideas For Future Features
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Pagination
+* Search Functionality
