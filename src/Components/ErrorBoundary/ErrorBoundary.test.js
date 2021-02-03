@@ -18,6 +18,7 @@ describe('ErrorBoundary Component', () => {
         ReactDOM.unmountComponentAtNode(div)
     })
 
+    //snapshot test
     it('renders the UI as expected', () => {
         const tree = renderer
             .create(<ErrorBoundary><Something /></ErrorBoundary>)

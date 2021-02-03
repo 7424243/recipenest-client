@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import config from '../../config'
-import './LoginPage.css'
 import RecipenestContext from '../../RecipenestContext'
 import PropTypes from 'prop-types'
+import './LoginPage.css'
 
 class LoginPage extends Component {
 

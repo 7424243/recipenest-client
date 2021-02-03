@@ -111,7 +111,12 @@ class SignUpPage extends Component {
                         </section>
                         <section className='buttons'>
                             <Link to='/'><button className='cancel-button'>Cancel</button></Link>
-                            <button type='submit' className='save-button'>Submit</button>
+                            <button 
+                                type='submit' 
+                                className='save-button'
+                            >
+                                Submit
+                            </button>
                         </section>
                         {this.state.error && <p className='sign-up-error'>{this.state.error.message}. Please try again.</p>}
                     </form>

@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import RecipenestContext from '../../RecipenestContext'
-import './RecipePage.css'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import PropTypes from 'prop-types'
+import './RecipePage.css'
 
 class RecipePage extends Component {
 
@@ -63,8 +63,6 @@ class RecipePage extends Component {
                     <Link to='/my-recipes'><button className='cancel-button'>Back</button></Link>
                     <button onClick={this.handleClickDelete} className='delete-button'>Delete</button>
                     <Link to={`/edit/${this.props.match.params.id}`}><button className='save-button'>Edit</button></Link>
-                    
-                    
                 </div>
             </div> 
         )

@@ -92,7 +92,6 @@ class App extends Component {
         </ErrorBoundary>
         <RecipenestContext.Provider value={contextValue}>
           <div>
-            
             <ErrorBoundary>
               <Switch>
                 <Route
@@ -126,7 +125,6 @@ class App extends Component {
                 />
               </Switch>
             </ErrorBoundary>
-            
           </div>
         </RecipenestContext.Provider>
         <footer></footer>

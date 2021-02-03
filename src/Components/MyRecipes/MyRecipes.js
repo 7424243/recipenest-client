@@ -47,7 +47,6 @@ class MyRecipes extends Component {
 
     render() {
         const {recipes} = this.state
-
         const sortFunction = (a, b) => {
             if(a.recipe_name.toLowerCase() < b.recipe_name.toLowerCase()) 
                 { return -1 }

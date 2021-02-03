@@ -19,8 +19,6 @@ class AddRecipe extends Component {
         img_url: 'https://i.pinimg.com/originals/71/fd/79/71fd79ff32acd3aab5821a64c54ea563.jpg',
         error: null
     }
-  
-
 
     //allow access to context
     static contextType = RecipenestContext
