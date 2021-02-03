@@ -23,6 +23,40 @@ class SignUpPage extends Component {
     //POST a new user
     handleSubmit = e => {
         e.preventDefault()
+        // Promise.all([
+        //     fetch(`${config.API_ENDPOINT}/users`, {
+        //         method: 'POST',
+        //         headers: {
+        //             'content-type': 'application/json',
+        //         },
+        //         body: JSON.stringify(this.state)
+        //     }),
+        //     fetch(`${config.API_ENDPOINT}/auth/login`, {
+        //         method: 'POST',
+        //         headers: {
+        //             'content-type': 'application/json',
+        //         },
+        //         body: JSON.stringify(this.state)
+        //     })
+        // ])
+        //     .then(([usersResponse, loginResponse]) => {
+        //         if(!usersResponse.ok)
+        //             return usersResponse.json().then(error => Promise.reject(error))
+        //         if(!loginResponse.ok)
+        //             return loginResponse.json().then(error => Promise.reject(error))
+        //         return(Promise.all([usersResponse.json(), loginResponse.json()]))
+        //     })
+        //     .then(([user, login]) => {
+        //         console.log('login', login)
+        //         this.context.onSignUpSuccess()
+        //         TokenService.saveAuthToken(login.authToken)
+        //         this.context.onLoginSuccess()
+        //         this.props.history.push('/my-recipes')
+        //     })
+        //     .catch(err => {
+        //         this.setState({error: err.error})
+        //         console.error({err})
+        //     })
         fetch(`${config.API_ENDPOINT}/users`, {
             method: 'POST',
             headers: {
