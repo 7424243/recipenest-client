@@ -38,6 +38,7 @@ class SignUpPage extends Component {
             })
             .then(() => {
                 this.context.onSignUpSuccess()
+                this.props.history.push('/login')
             })
             .catch(err => {
                 this.setState({error: err.error})
