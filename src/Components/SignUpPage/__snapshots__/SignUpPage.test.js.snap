@@ -25,6 +25,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Full Name: * 
       </label>
       <input
+        autoComplete="off"
         onChange={[Function]}
         placeholder="Full Name"
         required={true}
@@ -40,6 +41,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Username: * 
       </label>
       <input
+        autoComplete="off"
         onChange={[Function]}
         placeholder="username"
         required={true}
@@ -60,6 +62,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Must be at least 8 characters long and contain at least 1 upper case, 1 lower case, 1 number, and 1 special character.
       </p>
       <input
+        autoComplete="off"
         onChange={[Function]}
         placeholder="password"
         required={true}
@@ -75,6 +78,7 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
         Nickname (optional): 
       </label>
       <input
+        autoComplete="off"
         onChange={[Function]}
         placeholder="optional nickname"
         type="text"

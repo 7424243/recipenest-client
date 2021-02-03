@@ -18,6 +18,7 @@ Array [
         Username: 
       </label>
       <input
+        autoComplete="on"
         onChange={[Function]}
         placeholder="username"
         required={true}
@@ -33,6 +34,7 @@ Array [
         Password: 
       </label>
       <input
+        autoComplete="on"
         onChange={[Function]}
         placeholder="password"
         required={true}
