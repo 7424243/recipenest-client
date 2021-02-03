@@ -1,6 +1,6 @@
 # RecipeNest App
 
-RecipeNest is a responsive web application allows users to keep track of their virtual recipe notes. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RecipeNest is a responsive web application that allows users to keep track of their virtual recipe notes. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Live Demo
 
