@@ -84,9 +84,10 @@ class LoginPage extends Component {
                         />
                     </section>
                     <section className='buttons'>
-                        <Link to='/'><button className='cancel-button'>Cancel</button></Link>
+                        <button type='submit' className='cancel-button'>Login</button>
                         <Link to='/signup'><button className='sign-up-button'>Sign Up</button></Link>
-                        <button type='submit' className='save-button'>Login</button>
+                        <Link to='/'><button className='save-button'>Cancel</button></Link>
+                        
                     </section>
                     {this.state.error && <p className='login-error'>{this.state.error}. Please try logging in again, or Sign Up for an account.</p>}
                 </form>
