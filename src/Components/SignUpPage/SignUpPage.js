@@ -4,6 +4,7 @@ import config from '../../config'
 import RecipenestContext from '../../RecipenestContext'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import PropTypes from 'prop-types'
+import TokenService from '../../services/token-service'
 import './SignUpPage.css'
 
 class SignUpPage extends Component {
@@ -14,6 +15,7 @@ class SignUpPage extends Component {
         user_name: '',
         password: '',
         nickname: '',
+        id: -1,
         error: null
     }
 
@@ -36,9 +38,33 @@ class SignUpPage extends Component {
                 }
                 return res.json()
             })
-            .then(() => {
-                this.context.onSignUpSuccess()
-                this.props.history.push('/login')
+            .then((res) => {
+                console.log(res)
+                const {user_name, password} = this.state
+                const loginCreds = {user_name, password}
+                return fetch(`${config.API_ENDPOINT}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                    body: JSON.stringify(loginCreds)
+                })
+                    .then(res => {
+                        if(!res.ok) {
+                            return res.json().then(e => Promise.reject(e))
+                        }
+                        return res.json()
+                    })
+                    .then(res => {
+                        TokenService.saveAuthToken(res.authToken)
+                        this.context.onLoginSuccess()
+                        this.props.history.push('/my-recipes')
+                        
+                    })
+                    .catch(err => {
+                        this.setState({error: err.error})
+                        console.error({err})
+                    })
             })
             .catch(err => {
                 this.setState({error: err.error})
@@ -110,13 +136,14 @@ class SignUpPage extends Component {
                                 onChange={this.handleAddNickname}/>
                         </section>
                         <section className='buttons'>
-                            <Link to='/'><button className='cancel-button'>Cancel</button></Link>
                             <button 
                                 type='submit' 
-                                className='save-button'
+                                className='cancel-button'
                             >
                                 Submit
                             </button>
+                            <Link to='/'><button className='save-button'>Cancel</button></Link>
+
                         </section>
                         {this.state.error && <p className='sign-up-error'>{this.state.error.message}. Please try again.</p>}
                     </form>
