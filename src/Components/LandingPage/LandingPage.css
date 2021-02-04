@@ -7,6 +7,12 @@
     margin-right: 20%;
 }
 
+.landing-img {
+    height: 50%;
+    width: 100%;
+    border: solid;
+}
+
 .landing-page-button {
     margin-top: 20px;
     background-color: #5F7466;
@@ -27,25 +33,18 @@
 }
 
 .landing-page-container {
-    line-height: 2.0;
+    line-height: 1.5;
     margin: 25px;
     font-family: 'Baskervville', serif;
     font-size: large;
+    display: flex;
+    flex-direction: column;
 }
 
 .landing-page-info {
     text-align: left;
     margin-left: 20%;
     margin-right: 20%;
-}
-
-.landing-page-list {
-    text-align: left;
-}
-
-.landing-page-li {
-    margin-left: 20%;
-    list-style-position: inside;
 }
 
 
@@ -55,5 +54,12 @@
 @media screen and (min-width: 540px) {
     .landing-page-container {
         margin: 100px 75px;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .img-container {
+        margin-right: 20%;
+        margin-left: 20%;
     }
 }

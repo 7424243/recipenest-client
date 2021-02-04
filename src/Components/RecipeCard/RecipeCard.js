@@ -14,7 +14,7 @@ class RecipeCard extends Component {
         return (
             <Link to={`/recipe/${id}`}>
                 <div className='recipe-card'>
-                    <img className='recipe-card-img' src={img_url} alt='word cloud that describes the recipe' />
+                    <img className='recipe-card-img' src={img_url} alt='from recipe website' />
                     <h4 className='recipe-card-name'>{name}</h4>
                 </div>
             </Link>

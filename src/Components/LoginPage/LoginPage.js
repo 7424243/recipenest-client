@@ -59,8 +59,8 @@ class LoginPage extends Component {
         return (
             <>
                 <h3>Login!</h3>
-                <p className='demo-creds'>Demo Username: demo</p>
-                <p className='demo-creds'>Demo Password: Password0!</p>
+                <p className='login-demo-creds'>Demo Username: demo</p>
+                <p className='login-demo-creds'>Demo Password: Password0!</p>
                 <form 
                     className='login-form'
                     onSubmit={this.handleSubmitJwtAuth}
