@@ -59,6 +59,8 @@ class LoginPage extends Component {
         return (
             <>
                 <h3>Login!</h3>
+                <p className='demo-creds'>Demo Username: demo</p>
+                <p className='demo-creds'>Demo Password: Password0!</p>
                 <form 
                     className='login-form'
                     onSubmit={this.handleSubmitJwtAuth}
@@ -87,7 +89,6 @@ class LoginPage extends Component {
                         <button type='submit' className='cancel-button'>Login</button>
                         <Link to='/signup'><button className='sign-up-button'>Sign Up</button></Link>
                         <Link to='/'><button className='save-button'>Cancel</button></Link>
-                        
                     </section>
                     {this.state.error && <p className='login-error'>{this.state.error}. Please try logging in again, or Sign Up for an account.</p>}
                 </form>

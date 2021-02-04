@@ -1,5 +1,10 @@
 /* Classes */
 
+.demo-creds {
+    text-align: center;
+    font-size: small;
+}
+
 .login-error {
     text-align: center;
     color: #D16D2C;
