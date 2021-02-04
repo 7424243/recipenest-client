@@ -1,23 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RecipeCard Component renders the UI as expected 1`] = `
-<a
-  href="/recipe/1"
-  onClick={[Function]}
->
-  <div
-    className="recipe-card"
+<div>
+  <a
+    href="/recipe/1"
+    onClick={[Function]}
   >
-    <img
-      alt="word cloud that describes the recipe"
-      className="recipe-card-img"
-      src="url"
-    />
-    <h4
-      className="recipe-card-name"
+    <div
+      className="recipe-card"
     >
-      name
-    </h4>
-  </div>
-</a>
+      <img
+        alt="word cloud that describes the recipe"
+        className="recipe-card-img"
+        src="url"
+      />
+      <h4
+        className="recipe-card-name"
+      >
+        name
+      </h4>
+    </div>
+  </a>
+</div>
 `;

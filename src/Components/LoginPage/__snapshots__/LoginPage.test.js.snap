@@ -5,6 +5,16 @@ Array [
   <h3>
     Login!
   </h3>,
+  <p
+    className="login-demo-creds"
+  >
+    Demo Username: demo
+  </p>,
+  <p
+    className="login-demo-creds"
+  >
+    Demo Password: Password0!
+  </p>,
   <form
     className="login-form"
     onSubmit={[Function]}
@@ -44,16 +54,12 @@ Array [
     <section
       className="buttons"
     >
-      <a
-        href="/"
-        onClick={[Function]}
+      <button
+        className="cancel-button"
+        type="submit"
       >
-        <button
-          className="cancel-button"
-        >
-          Cancel
-        </button>
-      </a>
+        Login
+      </button>
       <a
         href="/signup"
         onClick={[Function]}
@@ -64,12 +70,16 @@ Array [
           Sign Up
         </button>
       </a>
-      <button
-        className="save-button"
-        type="submit"
+      <a
+        href="/"
+        onClick={[Function]}
       >
-        Login
-      </button>
+        <button
+          className="save-button"
+        >
+          Cancel
+        </button>
+      </a>
     </section>
   </form>,
 ]

@@ -1,16 +1,20 @@
 /* Classes */
 
+.add-button.center {
+    margin-right: 0;
+    margin-top: 25px;
+}
+
 .demo-creds {
     font-family: 'Noto Serif', serif;
-    text-align: left;
+    text-align: center;
     margin-left: 20%;
     margin-right: 20%;
 }
 
-.landing-img {
-    height: 50%;
-    width: 100%;
-    border: solid;
+.landing {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .landing-page-button {
@@ -42,10 +46,12 @@
 }
 
 .landing-page-info {
-    text-align: left;
+    text-align: center;
     margin-left: 20%;
     margin-right: 20%;
 }
+
+
 
 
 
