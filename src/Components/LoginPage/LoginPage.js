@@ -8,14 +8,12 @@ import './LoginPage.css'
 
 class LoginPage extends Component {
 
-    //set default state
     state = {
         user_name: '',
         password: '',
         error: null
     }
 
-    //allow access to context
     static contextType = RecipenestContext
 
     //Login with JWT authorization
@@ -46,14 +44,13 @@ class LoginPage extends Component {
             })
     }
 
-    //update state's values for username and password
     handleUsername = e => {
         this.setState({user_name: e.target.value})
     }
+
     handlePassword = e => {
         this.setState({password: e.target.value})
     }
-
 
     render() {
         return (

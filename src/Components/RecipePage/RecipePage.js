@@ -8,15 +8,12 @@ import './RecipePage.css'
 
 class RecipePage extends Component {
 
-    //set default state
     state = {
         error: null,
     }
 
-    //allow access to context
     static contextType = RecipenestContext
 
-    //DELETE request
     handleClickDelete = e => {
         e.preventDefault()
         const id = parseInt(this.props.match.params.id)

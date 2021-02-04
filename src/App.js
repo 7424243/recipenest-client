@@ -20,7 +20,7 @@ class App extends Component {
     signUpStatus: false,
   }
 
-  //get all recipes when component mounts
+  //get all recipes when component mounts in order to access recipes by user id
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/recipes`, {
       method: 'GET'

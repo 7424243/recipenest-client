@@ -11,7 +11,6 @@ import './AddRecipe.css'
 
 class AddRecipe extends Component {
 
-    //set default state
     state = {
         recipe_name: '',
         url: '',
@@ -20,42 +19,45 @@ class AddRecipe extends Component {
         error: null
     }
 
-    //allow access to context
     static contextType = RecipenestContext
 
-    //use inputs to update state
     addName = e => {
         this.setState({recipe_name: e.target.value})
     }
+    
     addUrl = e => {
         this.setState({url: e.target.value})
     }
+
     addNotes = e => {
         this.setState({notes: e.target.value})
     }
+
     addImgUrl = e => {
         this.setState({img_url: e.target.value})
     }
 
-    //validation functions for user inputs
     validateRecipeName() {
         const name = this.state.recipe_name.trim()
         if(name.length === 0) {
             return 'A recipe name is required'
         }
     }
+
     validateUrl() {
         const url = this.state.url.trim()
         if(!isWebUri(url)) {
             return 'A valid URL is required'
         }
     }
+
     validateNotes() {
         const notes = this.state.notes.trim()
         if(notes.length === 0) {
             return 'Notes are required'
         }
     }
+    
     validateImgUrl() {
         const img_url = this.state.img_url.trim()
         if(!isWebUri(img_url)) {

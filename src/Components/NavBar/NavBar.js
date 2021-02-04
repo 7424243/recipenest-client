@@ -6,21 +6,18 @@ import './NavBar.css'
 
 class NavBar extends Component {
 
-    //set default state
     state = {
         isLoggedIn: true
     }
     
-    //allow access to context
     static contextType = RecipenestContext
 
-    //function for when logout gets clicked
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
         this.setState({isLoggedIn: false})
     }
 
-    //render login or logout
+    //render login or logout based on if auth token has been saved
     logoutLink() {
         return (
             <Link to='/' className='nav-link' onClick={this.handleLogoutClick}> Logout </Link>

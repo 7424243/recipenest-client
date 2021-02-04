@@ -11,7 +11,6 @@ import './EditRecipeForm.css'
 
 class EditRecipeForm extends Component {
 
-    //set default state 
     state = {
         error: null,
         id: '',
@@ -23,10 +22,9 @@ class EditRecipeForm extends Component {
         user_id: '',
     }       
 
-    //allow access to context
     static contextType = RecipenestContext
 
-    //GET recipe's values
+    //GET recipe's values for auto fill
     componentDidMount() {
         const recipeId = this.props.match.params.id
         fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
@@ -55,39 +53,43 @@ class EditRecipeForm extends Component {
 
     }
 
-    //update any changes to values
     handleChangeName = e => {
         this.setState({recipe_name: e.target.value})
     }
+
     handleChangeUrl = e => {
         this.setState({url: e.target.value})
     }
+
     handleChangeNotes = e => {
         this.setState({notes: e.target.value})
     }
+
     handleChangeImgUrl = e => {
         this.setState({img_url: e.target.value})
     }
 
-    //validation functions for user inputs
     validateRecipeName() {
         const name = this.state.recipe_name.trim()
         if(name.length === 0) {
             return 'A recipe name is required in order to submit'
         }
     }
+
     validateUrl() {
         const url = this.state.url.trim()
         if(!isWebUri(url)) {
             return 'A valid URL is required in order to submit'
         }
     }
+
     validateNotes() {
         const notes = this.state.notes.trim()
         if(notes.length === 0) {
             return 'Notes are required in order to submit'
         }
     }
+    
     validateImgUrl() {
         const img_url = this.state.img_url.trim()
         if(!isWebUri(img_url)) {

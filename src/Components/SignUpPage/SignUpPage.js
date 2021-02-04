@@ -9,20 +9,17 @@ import './SignUpPage.css'
 
 class SignUpPage extends Component {
 
-    //set default state
     state = {
         full_name: '',
         user_name: '',
         password: '',
         nickname: '',
-        id: -1,
         error: null
     }
 
-    //allow access to context
     static contextType = RecipenestContext
 
-    //POST a new user
+    //create a new user account
     handleSubmit = e => {
         e.preventDefault()
         fetch(`${config.API_ENDPOINT}/users`, {
@@ -38,10 +35,10 @@ class SignUpPage extends Component {
                 }
                 return res.json()
             })
-            .then((res) => {
-                console.log(res)
+            .then(() => {
                 const {user_name, password} = this.state
                 const loginCreds = {user_name, password}
+                //login user automatically after signing up
                 return fetch(`${config.API_ENDPOINT}/auth/login`, {
                     method: 'POST',
                     headers: {
@@ -59,7 +56,6 @@ class SignUpPage extends Component {
                         TokenService.saveAuthToken(res.authToken)
                         this.context.onLoginSuccess()
                         this.props.history.push('/my-recipes')
-                        
                     })
                     .catch(err => {
                         this.setState({error: err.error})
@@ -72,16 +68,18 @@ class SignUpPage extends Component {
             })
     }
 
-    //set state with new values that user inputs
     handleAddFullname = e => {
         this.setState({full_name: e.target.value})
     }
+
     handleAddUsername = e => {
         this.setState({user_name: e.target.value})
     }
+
     handleAddPassword = e => {
         this.setState({password: e.target.value})
     }
+
     handleAddNickname = e => {
         this.setState({nickname: e.target.value})
     }

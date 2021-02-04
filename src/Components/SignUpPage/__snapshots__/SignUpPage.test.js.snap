@@ -87,22 +87,22 @@ exports[`SignUpPage Component renders the UI as expected 1`] = `
     <section
       className="buttons"
     >
+      <button
+        className="cancel-button"
+        type="submit"
+      >
+        Submit
+      </button>
       <a
         href="/"
         onClick={[Function]}
       >
         <button
-          className="cancel-button"
+          className="save-button"
         >
           Cancel
         </button>
       </a>
-      <button
-        className="save-button"
-        type="submit"
-      >
-        Submit
-      </button>
     </section>
   </form>
 </div>

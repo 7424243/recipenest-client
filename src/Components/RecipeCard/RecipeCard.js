@@ -6,10 +6,8 @@ import './RecipeCard.css'
 
 class RecipeCard extends Component {
 
-    //allow access to context
     static contextType = RecipenestContext
     
-
     renderRecipePage(id, name, img_url) {
         return (
             <Link to={`/recipe/${id}`}>
@@ -21,6 +19,7 @@ class RecipeCard extends Component {
         )
     }
     
+    //the recipe card on the landing page links to /login instead of a dynamic route
     renderLoginPage(name, img_url) {
         return (
             <Link to={`/login`}>

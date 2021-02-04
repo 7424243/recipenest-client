@@ -13,9 +13,6 @@ const TokenService = {
     hasAuthToken() {
         return !!TokenService.getAuthToken()
     },
-    makeBasicAuthToken(user_name, password) {
-        return window.btoa(`${user_name}: ${password}`)
-    },
     getUserIdFromToken() {
         const authToken = TokenService.getAuthToken()
         const bearerToken = authToken.slice(7, authToken.length)

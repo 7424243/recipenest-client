@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 class ErrorBoundary extends Component {
     
-    //set default state
     state = {
         hasError: false
     }

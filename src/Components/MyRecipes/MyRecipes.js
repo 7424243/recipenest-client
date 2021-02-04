@@ -8,13 +8,11 @@ import './MyRecipes.css'
 
 class MyRecipes extends Component {
 
-    //set default state
     state = {
         recipes: [],
         error: null
     }
 
-    //allow access to content
     static contextType = RecipenestContext
 
     //get all of the user's recipes when the component mounts
@@ -42,11 +40,10 @@ class MyRecipes extends Component {
             })
     }
 
-
-
-
     render() {
         const {recipes} = this.state
+
+        //sort recipes alphabetically
         const sortFunction = (a, b) => {
             if(a.recipe_name.toLowerCase() < b.recipe_name.toLowerCase()) 
                 { return -1 }
@@ -54,6 +51,7 @@ class MyRecipes extends Component {
                 { return 1 }
             return 0;
         }
+        
         const sortedRecipes = recipes.sort(sortFunction)
 
         const recipeList = sortedRecipes.length === 0 ? <p>It looks like you haven't saved any recipe notes yet! Please enter a recipe note by clicking on the '+' button to get started!</p> : recipes.map(recipe => 
