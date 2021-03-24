@@ -22,8 +22,11 @@ class App extends Component {
 
   //get all recipes when component mounts in order to access recipes by user id
   componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/recipes`, {
-      method: 'GET'
+    fetch(`${config.API_ENDPOINT}/recipes/`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
     })
       .then(res => {
         if(!res.ok) {
