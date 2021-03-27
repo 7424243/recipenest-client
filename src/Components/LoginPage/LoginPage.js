@@ -11,7 +11,8 @@ class LoginPage extends Component {
     state = {
         user_name: '',
         password: '',
-        error: null
+        error: null,
+        isPageLoading: false
     }
 
     static contextType = RecipenestContext
@@ -19,6 +20,7 @@ class LoginPage extends Component {
     //Login with JWT authorization
     handleSubmitJwtAuth = e => {
         e.preventDefault()
+        this.setState({isPageLoading: true})
         fetch(`${config.API_ENDPOINT}/auth/login`, {
             method: 'POST',
             headers: {
@@ -35,10 +37,11 @@ class LoginPage extends Component {
             .then(res => {
                 TokenService.saveAuthToken(res.authToken)
                 this.context.onLoginSuccess()
+                this.setState({isPageLoading: false})
                 this.props.history.push('/my-recipes')
-                
             })
             .catch(err => {
+                this.setState({isPageLoading: false})
                 this.setState({error: err.error})
                 console.error({err})
             })
@@ -53,6 +56,7 @@ class LoginPage extends Component {
     }
 
     render() {
+        const {isPageLoading} = this.state
         return (
             <>
                 <h3>Login!</h3>
@@ -82,6 +86,7 @@ class LoginPage extends Component {
                             onChange={this.handlePassword}
                         />
                     </section>
+                    {isPageLoading ? <div className='lds-default'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> : null}
                     <section className='buttons'>
                         <button type='submit' className='cancel-button'>Login</button>
                         <Link to='/signup'><button className='sign-up-button'>Sign Up</button></Link>
