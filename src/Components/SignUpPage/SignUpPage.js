@@ -14,7 +14,8 @@ class SignUpPage extends Component {
         user_name: '',
         password: '',
         nickname: '',
-        error: null
+        error: null,
+        isPageLoading: false
     }
 
     static contextType = RecipenestContext
@@ -22,6 +23,7 @@ class SignUpPage extends Component {
     //create a new user account
     handleSubmit = e => {
         e.preventDefault()
+        this.setState({isPageLoading: true})
         fetch(`${config.API_ENDPOINT}/users`, {
             method: 'POST',
             headers: {
@@ -55,14 +57,17 @@ class SignUpPage extends Component {
                     .then(res => {
                         TokenService.saveAuthToken(res.authToken)
                         this.context.onLoginSuccess()
+                        this.setState({isPageLoading: false})
                         this.props.history.push('/my-recipes')
                     })
                     .catch(err => {
+                        this.setState({isPageLoading: false})
                         this.setState({error: err.error})
                         console.error({err})
                     })
             })
             .catch(err => {
+                this.setState({isPageLoading: false})
                 this.setState({error: err.error})
                 console.error({err})
             })
@@ -85,6 +90,7 @@ class SignUpPage extends Component {
     }
 
     render() {
+        const {isPageLoading} = this.state
         return (
             <div className='sign-up-container'>
                 <h3>Sign Up!</h3>
@@ -133,6 +139,7 @@ class SignUpPage extends Component {
                                 autoComplete='off'
                                 onChange={this.handleAddNickname}/>
                         </section>
+                        {isPageLoading ? <div className='lds-default'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> : null}
                         <section className='buttons'>
                             <button 
                                 type='submit' 
