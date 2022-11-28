@@ -1,9 +1,9 @@
 const config = {
-    API_ENDPOINT: `https://infinite-headland-60692.herokuapp.com/api`,
-    //API_ENDPOINT: `http://localhost:8000/api`,
+    API_ENDPOINT: `http://localhost:8000/api`,
     TOKEN_KEY: 'recipenest-client-auth-token'
 }
 
 export default config
 
 
+//DEPRECATED Heroku API_ENDPOINT: `https://infinite-headland-60692.herokuapp.com/api`,

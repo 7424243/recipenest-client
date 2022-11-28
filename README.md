@@ -6,6 +6,8 @@ RecipeNest is a responsive web application that allows users to keep track of th
 
 Click [here](https://recipenest.vercel.app/).
 
+**Note: currently, the server and database need to be running *locally* for the fullstack application to work as expected.**
+
 ## Screenshots
 
 ### Login Page:
